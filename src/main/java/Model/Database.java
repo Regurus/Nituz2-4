@@ -8,13 +8,13 @@ public  abstract class Database {
     protected String name;
     protected String tableName;
 
-    protected Database(String name){
+    public Database(String name){
         this.name = name;
         File a = new File("src/main/resources/Database.sqlite3");
         File parentFolder = new File(a.getParent());
         deployDataBase(parentFolder.getParent(),name);
     }
-    protected void deployDataBase(String location,String name){
+    public void deployDataBase(String location,String name){
         String url = "jdbc:sqlite:"+location + "\\" + name;
         Connection conn = null;
         try{
@@ -52,7 +52,7 @@ public  abstract class Database {
             return null;
         }
     }
-    ResultSet getTupleByFields(String[] fields, String[] values, String logicCase){
+    public ResultSet getTupleByFields(String[] fields, String[] values, String logicCase){
         if(fields.length!=values.length)
             throw new RuntimeException("Asymmetrical fields/values amount given for search!");
         String sql = "SELECT * FROM "+this.tableName+" WHERE ";
@@ -72,7 +72,7 @@ public  abstract class Database {
         sql = sql+";";
         return this.executeGetStatement(sql,values);
     }
-    void executeUpdateStatement(String statement, String[] arguments){
+    public void executeUpdateStatement(String statement, String[] arguments){
         try {
             PreparedStatement pstmt = this.currentConnection.prepareStatement(statement);
             // set the corresponding param
@@ -85,7 +85,7 @@ public  abstract class Database {
             System.out.println(e.getMessage());
         }
     }
-    ResultSet executeGetStatement(String statement, String[] arguments){
+    public ResultSet executeGetStatement(String statement, String[] arguments){
         ResultSet rs = null;
         try {
             PreparedStatement pstmt = this.currentConnection.prepareStatement(statement);

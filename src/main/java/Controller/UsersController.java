@@ -1,6 +1,7 @@
 package Controller;
 
 
+
 import Model.LoginDatabase;
 
 import java.util.regex.Pattern;
@@ -39,5 +40,8 @@ public class UsersController{
     }
     public static String getCurrentUser(){
         return currentLogin;
+    }
+    public static void endSession(){
+        activeConnection.closeConnection();
     }
 }

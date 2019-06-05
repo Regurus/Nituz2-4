@@ -1,4 +1,4 @@
-import Model.LoginDatabase;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
-import java.io.File;
 
 public class Main extends Application {
     /***
@@ -17,7 +16,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("signIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
         //root.getStylesheets().add(getClass().getResource("Main_Style.css").toString());
         primaryStage.setTitle("Emer-Agency");
         primaryStage.setScene(new Scene(root, 600, 400));
