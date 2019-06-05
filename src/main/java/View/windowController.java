@@ -7,11 +7,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class windowController {
+    private Stage stage;
     protected final String IDLE_BUTTON_STYLE = "-fx-background-color: transparent;";
     protected final String HOVERED_BUTTON_STYLE = "-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;";
     protected void openNewWindow(String windowName, String fxmlFile,int width,int height){
         try {
-            Stage stage = new Stage();
+            this.stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.setTitle(windowName);
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -24,7 +25,7 @@ public class windowController {
     }
     protected void openNewWindowAndCloseOld(String windowName, String fxmlFile, int width, int height){
         try {
-            Stage stage = new Stage();
+            this.stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.setTitle(windowName);
             FXMLLoader fxmlLoader = new FXMLLoader();

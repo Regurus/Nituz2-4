@@ -21,9 +21,9 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <FontAwesomeIconView glyphName="TIMES" layoutX="566.0" layoutY="33.0" size="20" text="" wrappingWidth="19.428571701049805" />
-      <PasswordField layoutX="185.0" layoutY="270.0" prefHeight="25.0" prefWidth="230.0" promptText="Password" />
-      <TextField layoutX="185.0" layoutY="225.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" />
+      <FontAwesomeIconView glyphName="TIMES" layoutX="566.0" layoutY="33.0" onMouseClicked="#close" size="20" text="" wrappingWidth="19.428571701049805" />
+      <PasswordField fx:id="password" layoutX="185.0" layoutY="270.0" prefHeight="25.0" prefWidth="230.0" promptText="Password" />
+      <TextField fx:id="username" layoutX="185.0" layoutY="225.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" />
       <Button layoutX="250.0" layoutY="322.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="101.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000; -fx-border-radius: 5;" text="Enter">
          <font>
             <Font size="18.0" />
