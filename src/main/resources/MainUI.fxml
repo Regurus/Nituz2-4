@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="View.MainUIController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="697.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainUIController">
+   <children>
+      <SplitPane layoutX="195.0" layoutY="186.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <FontAwesomeIconView fx:id="search" glyphName="SEARCH" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" translateX="45.0" />
+                  <FontAwesomeIconView fx:id="add" glyphName="PLUS" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" translateX="55.0" GridPane.columnIndex="1" />
+                  <FontAwesomeIconView fx:id="exit" glyphName="SIGN_OUT" onMouseClicked="#close" size="60" textAlignment="CENTER" translateX="50.0" GridPane.columnIndex="5" />
+                  <MaterialDesignIconView fx:id="complaint" glyphName="ACCOUNT_MINUS" onMouseClicked="#handleMenuClick" size="60" translateX="47.0" GridPane.columnIndex="2" />
+                  <MaterialDesignIconView fx:id="adminFunctions" glyphName="ACCOUNT_STAR_VARIANT" onMouseClicked="#handleMenuClick" size="60" translateX="45.0" GridPane.columnIndex="3" />
+                  <GridPane GridPane.columnIndex="4">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="78.0" minWidth="10.0" prefWidth="26.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="45.0" minWidth="10.0" prefWidth="28.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <FontAwesomeIconView fx:id="personalInfo" glyphName="USER" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" translateX="25.0" GridPane.columnIndex="1" />
+                        <Label fx:id="username" prefHeight="17.0" prefWidth="96.0" text="\\$USERNAME$" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </items>
+      </SplitPane>
+      <Separator layoutX="-4.0" layoutY="95.0" prefHeight="11.0" prefWidth="902.0" />
+      <TilePane layoutX="10.0" layoutY="100.0" prefHeight="576.0" prefWidth="879.0" />
+   </children>
 </AnchorPane>

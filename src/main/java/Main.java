@@ -16,7 +16,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MainUI.fxml"));
         //root.getStylesheets().add(getClass().getResource("Main_Style.css").toString());
         primaryStage.setTitle("Emer-Agency");
         primaryStage.setScene(new Scene(root, 600, 400));
