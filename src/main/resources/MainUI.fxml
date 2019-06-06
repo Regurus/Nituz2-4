@@ -2,58 +2,333 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="697.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainUIController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainUIController">
    <children>
       <SplitPane layoutX="195.0" layoutY="186.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
-            <GridPane>
+            <GridPane style="-fx-background-color: #EEEEEE;">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="444.0" minWidth="10.0" prefWidth="15.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="883.0" minWidth="10.0" prefWidth="869.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="883.0" minWidth="10.0" prefWidth="19.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <FontAwesomeIconView fx:id="search" glyphName="SEARCH" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" translateX="45.0" />
-                  <FontAwesomeIconView fx:id="add" glyphName="PLUS" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" translateX="55.0" GridPane.columnIndex="1" />
-                  <FontAwesomeIconView fx:id="exit" glyphName="SIGN_OUT" onMouseClicked="#close" size="60" textAlignment="CENTER" translateX="50.0" GridPane.columnIndex="5" />
-                  <MaterialDesignIconView fx:id="complaint" glyphName="ACCOUNT_MINUS" onMouseClicked="#handleMenuClick" size="60" translateX="47.0" GridPane.columnIndex="2" />
-                  <MaterialDesignIconView fx:id="adminFunctions" glyphName="ACCOUNT_STAR_VARIANT" onMouseClicked="#handleMenuClick" size="60" translateX="45.0" GridPane.columnIndex="3" />
-                  <GridPane GridPane.columnIndex="4">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="78.0" minWidth="10.0" prefWidth="26.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="45.0" minWidth="10.0" prefWidth="28.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
+                  <TilePane hgap="52.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <FontAwesomeIconView fx:id="personalInfo" glyphName="USER" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" translateX="25.0" GridPane.columnIndex="1" />
-                        <Label fx:id="username" prefHeight="17.0" prefWidth="96.0" text="\\$USERNAME$" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <GridPane fx:id="search_blck" prefHeight="18.0" prefWidth="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Search Events" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <FontAwesomeIconView fx:id="search" glyphName="SEARCH" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="add_blck" prefHeight="80.0" prefWidth="100.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <FontAwesomeIconView fx:id="add" glyphName="PLUS" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Add Event" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="createC_blck" prefHeight="80.0" prefWidth="100.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <MaterialDesignIconView fx:id="complaint" glyphName="ACCOUNT_MINUS" onMouseClicked="#handleMenuClick" size="60" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Create a complaint" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="admin_blck" prefHeight="80.0" prefWidth="100.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <MaterialDesignIconView fx:id="adminFunctions" glyphName="ACCOUNT_STAR_VARIANT" onMouseClicked="#handleMenuClick" size="60" translateX="2.0" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Admin Panel" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="info_blck" prefHeight="80.0" prefWidth="100.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <FontAwesomeIconView fx:id="personalInfo" glyphName="USER" onMouseClicked="#handleMenuClick" size="60" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="User Info" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                        <GridPane prefHeight="80.0" prefWidth="100.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <FontAwesomeIconView fx:id="exit" glyphName="SIGN_OUT" onMouseClicked="#close" size="60" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Quit" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
                      </children>
-                  </GridPane>
+                  </TilePane>
                </children>
             </GridPane>
          </items>
       </SplitPane>
       <Separator layoutX="-4.0" layoutY="95.0" prefHeight="11.0" prefWidth="902.0" />
-      <TilePane layoutX="10.0" layoutY="100.0" prefHeight="576.0" prefWidth="879.0" />
+      <StackPane layoutY="101.0" prefHeight="596.0" prefWidth="902.0">
+         <children>
+            <GridPane fx:id="search_scr" style="-fx-background-color: #FFFFFF;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Search: Under Construction">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <GridPane fx:id="add_scr" style="-fx-background-color: #FFFFFF;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Add: Under Construction">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <GridPane fx:id="admin_scr" style="-fx-background-color: #FFFFFF;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="0.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="868.0" minWidth="10.0" prefWidth="859.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="9.0" prefWidth="20.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Accordion GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <panes>
+                      <TitledPane animated="false" text="Create New Category">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="374.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="369.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="340.0" minHeight="10.0" prefHeight="280.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField prefHeight="40.0" prefWidth="332.0" promptText="Name the new Category" style="-fx-border-radius: 0;" />
+                                                <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="35.0" style="-fx-border-radius: 0;">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="PLUS" size="25" translateY="2.0" />
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Review Complaints">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </GridPane>
+            <GridPane fx:id="user_scr" style="-fx-background-color: #FFFFFF;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="User: Under Construction">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <GridPane fx:id="complaint_scr" style="-fx-background-color: #FFFFFF;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="321.0" layoutY="14.0" text="File a new Complaint">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="compl_msg" layoutX="93.0" layoutY="218.0" prefHeight="163.0" prefWidth="676.0" promptText="Short descrition." />
+                        <Button layoutX="389.0" layoutY="451.0" mnemonicParsing="false" text="Confirm">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <ComboBox fx:id="compl_department" layoutX="542.0" layoutY="153.0" prefHeight="30.0" prefWidth="223.0" promptText="Department" />
+                        <TextField fx:id="compl_username" layoutX="93.0" layoutY="153.0" prefHeight="30.0" prefWidth="278.0" promptText="Username" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>

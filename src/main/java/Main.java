@@ -19,7 +19,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MainUI.fxml"));
         //root.getStylesheets().add(getClass().getResource("Main_Style.css").toString());
         primaryStage.setTitle("Emer-Agency");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 900, 700));
         //SetStageCloseEvent(primaryStage);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
 

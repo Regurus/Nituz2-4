@@ -3,17 +3,20 @@ package View;
 import Controller.UsersController;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
-import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.WindowEvent;
 
 public class MainUIController extends windowController {
-    private int depressedBtn = 0;
-    @FXML
-    private Label username;
+    private int depressedBtn = 4;
+    //<editor-fold desc="Icons">
+
     @FXML
     private FontAwesomeIconView personalInfo;
     @FXML
@@ -25,74 +28,95 @@ public class MainUIController extends windowController {
     @FXML
     private FontAwesomeIconView search;
 
+    //</editor-fold>
+
+    //<editor-fold desc="Screens">
+
+    @FXML
+    private GridPane search_scr;
+    @FXML
+    private GridPane add_scr;
+    @FXML
+    private GridPane complaint_scr;
+    @FXML
+    private GridPane admin_scr;
+    @FXML
+    private GridPane user_scr;
+
+    //</editor-fold>
+
+    //<editor-fold desc="Complaint Screen">
+    @FXML
+    private TextField compl_username;
+    @FXML
+    private ComboBox compl_department;
+    @FXML
+    private TextArea compl_msg;
+    //</editor-fold>
+
+    public void initialize() {
+        this.updateMenu(this.depressedBtn);
+        search_scr.toFront();
+        this.init_cpl();
+    }
+    private void init_cpl(){
+        this.compl_department.getItems().addAll("Fire Department","Police Department","Medical Department","Dispatcher");
+    }
     @FXML
     public void close(){
-        UsersController.endSession();
-        this.username.getScene().getWindow().fireEvent(new WindowEvent(this.username.getScene().getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
+        //UsersController.endSession();
+        this.search.getScene().getWindow().fireEvent(new WindowEvent(this.search.getScene().getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
     }
     @FXML
     private void handleMenuClick(MouseEvent actionEvent){
         int newButton=0;
         if (actionEvent.getSource() == personalInfo) {
-            //home_scr.toFront();
+            user_scr.toFront();
             newButton=0;
         }
         if (actionEvent.getSource() == adminFunctions) {
-            //add_scr.toFront();
+            admin_scr.toFront();
             newButton=1;
         }
         if (actionEvent.getSource() == complaint) {
-            //published_scr.toFront();
+            complaint_scr.toFront();
             newButton=2;
         }
         if (actionEvent.getSource() == add) {
-            //favorites_scr.toFront();
+            add_scr.toFront();
             newButton=3;
         }
         if (actionEvent.getSource() == search) {
-            //favorites_scr.toFront();
+            search_scr.toFront();
             newButton=4;
         }
         this.updateMenu(newButton);
     }
+    private void setFill(int index,String color){
+        switch (index){
+            case 0:
+                this.personalInfo.setFill(Paint.valueOf(color));
+                break;
+            case 1:
+                this.adminFunctions.setFill(Paint.valueOf(color));
+                break;
+            case 2:
+                this.complaint.setFill(Paint.valueOf(color));
+                break;
+            case 3:
+                this.add.setFill(Paint.valueOf(color));
+                break;
+            case 4:
+                this.search.setFill(Paint.valueOf(color));
+                break;
+        }
+    }
     private void updateMenu(int newActiveButton){
-        String inactiveColor = "#FFFFFF";
-        switch (this.depressedBtn){
-            case 1:
-                this.personalInfo.setFill(Paint.valueOf(inactiveColor));
-                break;
-            case 2:
-                this.add.setFill(Paint.valueOf(inactiveColor));
-                break;
-            case 3:
-                this.complaint.setFill(Paint.valueOf(inactiveColor));
-                break;
-            case 4:
-                this.adminFunctions.setFill(Paint.valueOf(inactiveColor));
-                break;
-            case 5:
-                this.search.setFill(Paint.valueOf(inactiveColor));
-                break;
-        }
-
-        String activeColor = "#FFFFFF";
-        switch (newActiveButton){
-            case 1:
-                this.personalInfo.setFill(Paint.valueOf(activeColor));
-                break;
-            case 2:
-                this.add.setFill(Paint.valueOf(inactiveColor));
-                break;
-            case 3:
-                this.complaint.setFill(Paint.valueOf(inactiveColor));
-                break;
-            case 4:
-                this.adminFunctions.setFill(Paint.valueOf(inactiveColor));
-                break;
-            case 5:
-                this.search.setFill(Paint.valueOf(inactiveColor));
-                break;
-        }
+        String inactiveColor = "#000000";
+        String activeColor = "#AAAAAA";
+        this.setFill(this.depressedBtn,inactiveColor);
+        this.setFill(newActiveButton,activeColor);
         this.depressedBtn = newActiveButton;
     }
+    
 }

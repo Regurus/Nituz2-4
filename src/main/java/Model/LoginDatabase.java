@@ -64,7 +64,7 @@ public class LoginDatabase extends Database {
         }
         if(!exists)
             return null;
-        String[] res = new String[5];
+        String[] res = new String[7];
         try {
             res[0] = rs.getString("login");
             res[1] = rs.getString("password");
