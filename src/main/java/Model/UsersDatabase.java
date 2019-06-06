@@ -58,21 +58,23 @@ public class UsersDatabase extends Database {
         return parseResultSet(rs);
     }
 
-    /*public ArrayList<User> getUsers(){
+    public ArrayList<User> getUsers(){
         String sql = "SELECT * " + "FROM users_table ";
         String[] args = null;
         ResultSet rs = this.executeGetStatement(sql,args);
         ArrayList<User> res = new ArrayList<User>();
         try{
             while (rs.next()) {
-                res.add(parseResultSet(rs));
+                res.add(new User(rs.getString("username"), rs.getString("password"),
+                        rs.getString("name"), rs.getString("rank"),
+                        rs.getString("status"), rs.getString("type")));
             }
         }
         catch (SQLException e ) {
             System.out.println(e.getMessage());
         }
         return res;
-    }*/
+    }
 
     private User parseResultSet(ResultSet rs){
         boolean exists;
