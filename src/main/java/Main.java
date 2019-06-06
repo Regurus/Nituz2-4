@@ -34,13 +34,7 @@ public class Main extends Application {
         //if not deployed do deployment procedure
         //initialize database connections
         //open Login UI
-        //launch(args);
-        UsersDatabase ud = new UsersDatabase();
-        ArrayList<User> u = ud.getUsers();
-        for (User us:u) {
-            System.out.println(us.getName());
-
-        }
+        launch(args);
 
     }
 }
