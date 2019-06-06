@@ -1,11 +1,13 @@
 package View;
 
+import Controller.EASystem;
 import Controller.UsersController;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -52,6 +54,8 @@ public class MainUIController extends windowController {
     private ComboBox compl_department;
     @FXML
     private TextArea compl_msg;
+    @FXML
+    private Label compl_err_msg;
     //</editor-fold>
 
     public void initialize() {
@@ -118,5 +122,25 @@ public class MainUIController extends windowController {
         this.setFill(newActiveButton,activeColor);
         this.depressedBtn = newActiveButton;
     }
-    
+    @FXML
+    private void sendComplaint(){
+        this.compl_err_msg.setText("");
+        boolean flag = false;
+        if(this.compl_username.getText().length()==0){
+            this.compl_err_msg.setText(this.compl_err_msg.getText()+"Please insert user\n");
+            flag = true;
+        }
+        if(this.compl_department.getValue()==null){
+            this.compl_err_msg.setText(this.compl_err_msg.getText()+"Please select division\n");
+            flag = true;
+        }
+        if(this.compl_msg.getText().length()==0){
+            this.compl_err_msg.setText(this.compl_err_msg.getText()+"Please describe the reason\n");
+            flag = true;
+        }
+        if(flag)
+            return;
+        EASystem sys = new EASystem();//TODO change this
+        sys.createNewComplaint(this.compl_username.getText(),(String)this.compl_department.getValue(),this.compl_msg.getText());
+    }
 }

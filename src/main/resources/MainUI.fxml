@@ -317,13 +317,18 @@
                            </font>
                         </Label>
                         <TextArea fx:id="compl_msg" layoutX="93.0" layoutY="218.0" prefHeight="163.0" prefWidth="676.0" promptText="Short descrition." />
-                        <Button layoutX="389.0" layoutY="451.0" mnemonicParsing="false" text="Confirm">
+                        <Button layoutX="389.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#sendComplaint" text="Confirm">
                            <font>
                               <Font size="17.0" />
                            </font>
                         </Button>
                         <ComboBox fx:id="compl_department" layoutX="542.0" layoutY="153.0" prefHeight="30.0" prefWidth="223.0" promptText="Department" />
                         <TextField fx:id="compl_username" layoutX="93.0" layoutY="153.0" prefHeight="30.0" prefWidth="278.0" promptText="Username" />
+                        <VBox alignment="CENTER" layoutY="491.0" prefHeight="60.0" prefWidth="862.0">
+                           <children>
+                              <Label fx:id="compl_err_msg" textFill="#ff2121" />
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                </children>
