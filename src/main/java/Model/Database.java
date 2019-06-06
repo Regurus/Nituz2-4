@@ -9,8 +9,8 @@ public  abstract class Database {
     protected String tableName;
 
     public Database(){
-        this.name = "Emer-AgencyDB";
-        File a = new File("src/main/resources/Database.sqlite3");
+        this.name = "database.db";
+        File a = new File("src/main/resources/Database.db");
         File parentFolder = new File(a.getParent());
         deployDataBase(parentFolder.getParent(),name);
     }
@@ -90,8 +90,10 @@ public  abstract class Database {
         try {
             PreparedStatement pstmt = this.currentConnection.prepareStatement(statement);
             // set the corresponding param
-            for(int i=0;i<arguments.length;i++){
-                pstmt.setString(i+1, arguments[i]);
+            if(arguments!=null) {
+                for (int i = 0; i < arguments.length; i++) {
+                    pstmt.setString(i + 1, arguments[i]);
+                }
             }
             rs = pstmt.executeQuery();
             return rs;

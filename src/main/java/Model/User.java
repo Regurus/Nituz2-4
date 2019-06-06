@@ -3,23 +3,19 @@ package Model;
 public class User {
     private String userName;
     private String password;
-    private String privateName;
+    private String name;
+    private String rank;
     private String status;
-    private String division;
     private String type;
-    private int rank;
-    private boolean logIn;
 
 
-    public User(String userName, String password, String birthDate, String privateName,String status, String city,String division,int rank,String type, boolean logIn) {
+    public User(String userName, String password, String name,String rank, String status,String type) {
         this.userName = userName;
         this.password = password;
-        this.privateName = privateName;
-        this.division = division;
-        this.status=status;
+        this.name = name;
         this.rank = rank;
+        this.status=status;
         this.type=type;
-        this.logIn= false;
     }
 
     @Override
@@ -27,8 +23,7 @@ public class User {
         return "User:  " + "\n"+
                 "userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", privateName=" + privateName +
-                ", division='" + division + "\n" +
+                ", name=" + name +
                 ", status='" + status + '\'' +
                 ", rank='" + rank + '\'' +
                 ", status='" + status + '\'' +
@@ -55,12 +50,12 @@ public class User {
         this.password = password;
     }
 
-    public String getPrivateName() {
-        return privateName;
+    public String getName() {
+        return name;
     }
 
-    public void setPrivateName(String privateName) {
-        this.privateName = privateName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getStatus() {
@@ -79,28 +74,12 @@ public class User {
         this.type = type;
     }
 
-    public String getDivision() {
-        return division;
-    }
-
-    public void setDivision(String divisin) {
-        this.division = divisin;
-    }
-
-    public int getRank() {
+    public String getRank() {
         return rank;
     }
 
-    public void setRank(int rank) {
+    public void setRank(String rank) {
         this.rank = rank;
-    }
-
-    public void setLogIn(boolean logIn) {
-        this.logIn = logIn;
-    }
-
-    public boolean isLogIn() {
-        return logIn;
     }
 
 }

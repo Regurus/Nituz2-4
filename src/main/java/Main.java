@@ -1,4 +1,6 @@
 
+import Model.UsersDatabase;
+import Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -6,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.ArrayList;
 
 
 public class Main extends Application {
@@ -31,7 +34,13 @@ public class Main extends Application {
         //if not deployed do deployment procedure
         //initialize database connections
         //open Login UI
-        launch(args);
+        //launch(args);
+        UsersDatabase ud = new UsersDatabase();
+        ArrayList<User> u = ud.getUsers();
+        for (User us:u) {
+            System.out.println(us.getName());
+
+        }
 
     }
 }
