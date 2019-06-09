@@ -2,14 +2,13 @@ package View;
 
 import Controller.EASystem;
 import Controller.UsersController;
+import Model.Complaint;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
@@ -17,6 +16,7 @@ import javafx.stage.WindowEvent;
 
 public class MainUIController extends windowController {
     private int depressedBtn = 4;
+    public static Complaint selected;
     //<editor-fold desc="Icons">
 
     @FXML
@@ -58,18 +58,33 @@ public class MainUIController extends windowController {
     private Label compl_err_msg;
     //</editor-fold>
 
+    //<editor-fold desc="Admin Screen">
+    @FXML
+    private ListView adm_scr_cpl_list;
+    //</editor-fold>
+
     public void initialize() {
         this.updateMenu(this.depressedBtn);
         search_scr.toFront();
         this.init_cpl();
+        this.init_adm();
     }
     private void init_cpl(){
         this.compl_department.getItems().addAll("Fire Department","Police Department","Medical Department","Dispatcher");
     }
+    private void init_adm(){
+        adm_scr_cpl_list.getItems().addAll("c1","c2","c3");
+        adm_scr_cpl_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    }
     @FXML
-    public void close(){
-        //UsersController.endSession();
-        this.search.getScene().getWindow().fireEvent(new WindowEvent(this.search.getScene().getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
+    private void openAdmComplaintDialog(MouseEvent mouseEvent){
+        if(mouseEvent.getClickCount()==2){
+            String selected = (String)((ListView)mouseEvent.getSource()).getSelectionModel().getSelectedItems().get(0);
+            //get System instance
+            //get Complaint Object
+            MainUIController.selected = new Complaint("me","you","f you","today");
+            this.openNewWindow("Review Complaint","ComplaintDialog.fxml",600,400);
+        }
     }
     @FXML
     private void handleMenuClick(MouseEvent actionEvent){
@@ -142,5 +157,9 @@ public class MainUIController extends windowController {
             return;
         EASystem sys = new EASystem();//TODO change this
         sys.createNewComplaint(this.compl_username.getText(),(String)this.compl_department.getValue(),this.compl_msg.getText());
+    }
+    @FXML
+    private void test(MouseEvent event){
+        System.out.println(event.getClickCount());
     }
 }
