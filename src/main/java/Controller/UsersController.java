@@ -21,11 +21,13 @@ public class UsersController{
         {
             activeConnection = new UsersDatabase();
             dispatchers = new ArrayList<Dispatcher>();
-            emergencyMedicalTechnicians = new ArrayList<>();
-            emergencyMedicalTechnicians = new ArrayList<>();
+            emergencyMedicalTechnicians = new ArrayList<EmergencyMedicalTechnician>();
+            policemen = new ArrayList<Policeman>();
+            firemen = new ArrayList<Fireman>();
         }
-
     }
+
+
     public boolean combinationApprove(String login,String password){
         User account = activeConnection.getByUsername(login);
         if(account==null)
