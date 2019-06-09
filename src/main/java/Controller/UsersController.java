@@ -16,6 +16,7 @@ public class UsersController{
     private UsersDatabase usersDB;
     private static UsersController usersController = null;
     private static int complaintID = 1;
+    private static String currentLogin;//should be updated to null on exit TODO
 
     private UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB)
     {
@@ -36,20 +37,6 @@ public class UsersController{
         return usersController;
     }
 
-    private static String currentLogin;//should be updated to null on exit
-    static UsersDatabase activeConnection;
-    public UsersController(){
-        if(activeConnection==null)
-        {
-            activeConnection = new UsersDatabase();
-            dispatchers = new ArrayList<Dispatcher>();
-            emergencyMedicalTechnicians = new ArrayList<EmergencyMedicalTechnician>();
-            policemen = new ArrayList<Policeman>();
-            firemen = new ArrayList<Fireman>();
-        }
-    }
-
-
     public int getAvailableComplaintID(){
         return complaintID;
     }
@@ -68,11 +55,12 @@ public class UsersController{
 
 
     public boolean combinationApprove(String login,String password){
-        User account = activeConnection.getByUsername(login);
-        if(account==null)
+        User account = usersDB.getByUsername(login);
+        if(account==null){
             return false;
+        }
         return account.getPassword().equals(password);
-    }
+    }//TODO check admin!
     public boolean passwordApprove(String password){
         //approves only passwords that include at least 1 number, 1 capital letter and one regular letter.
         return Pattern.matches("[0-9]", password) && Pattern.matches("[a-z]", password) && Pattern.matches("[A-Z]", password);
@@ -85,8 +73,5 @@ public class UsersController{
     }
     public static String getCurrentUser(){
         return currentLogin;
-    }
-    public static void endSession(){
-        activeConnection.closeConnection();
     }
 }
