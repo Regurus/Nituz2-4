@@ -17,10 +17,10 @@ public class UsersController{
 
 
     public UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB) {
-        this.dispatchers = usersDB.getAllDispatchers();
-        this.emergencyMedicalTechnicians = usersDB.getAllEmergencyMedicalTechnicians();
-        this.policemen = usersDB.getAllPolicemen();
-        this.firemen = usersDB.getAllFiremen();
+       // this.dispatchers = userDB.getUsersByType("Dispatcher");
+       // this.emergencyMedicalTechnicians = userDB.getUsersByType("EmergencyMedicalTechnician");
+       // this.policemen = userDB.getUsersByType("Policeman");
+       // this.firemen = userDB.getUsersByType("Fireman");
         this.usersDB = usersDB;
         this.complaintDB = complaintDB;
     }
