@@ -44,6 +44,7 @@ public class UsersDatabase extends Database {
         String[] args = {newValue,username};
         this.executeUpdateStatement(sql,args);
     }
+
     public void deleteTuple(String username){
         String sql = "DELETE FROM users_table WHERE username = ?";
         String[] args = {username};
