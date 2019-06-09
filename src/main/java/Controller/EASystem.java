@@ -15,6 +15,7 @@ public class EASystem {
     public void createNewCategory(Category ctr){
         //add the given category to the DB;
         // write the category addition to logger
+        System.out.println("inbar");
 
     }
 
