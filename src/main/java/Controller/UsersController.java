@@ -15,6 +15,7 @@ public class UsersController{
     private ComplaintDatabase complaintDB;
     private UsersDatabase usersDB;
     private static UsersController usersController = null;
+    private static int complaintID = 1;
 
     private UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB)
     {
@@ -48,10 +49,22 @@ public class UsersController{
         }
     }
 
+
+    public int getAvailableComplaintID(){
+        return complaintID;
+    }
+
+    public void incrementComplaintID(){
+        complaintID++;
+    }
+
     public static void addComplaint(Complaint complaint) {
        // ComplaintDatabase.createComplaint(complaint);
+
         //write the complaint addition to logger
+
     }
+
 
 
     public boolean combinationApprove(String login,String password){

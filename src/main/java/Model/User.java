@@ -42,7 +42,8 @@ public abstract class User extends Observable {
     }
 
     public void createComplaint(String source, String destination, String description,String date){
-        Complaint complaint = new Complaint(source, destination, description, date);
+        Complaint complaint = new Complaint(usersController.getAvailableComplaintID(),source, destination, description, date);
+        usersController.incrementComplaintID();
         usersController.addComplaint(complaint);
         setChanged();
         notifyObservers(complaint);

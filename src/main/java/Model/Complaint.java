@@ -6,8 +6,10 @@ public class Complaint {
     private String description;
     private boolean confirm;
     private String date;
+    private int id;
 
-    public Complaint(String source, String destination, String description,String date) {
+    public Complaint(int id,String source, String destination, String description,String date) {
+        this.id=id;
         this.source = source;
         this.destination = destination;
         this.description = description;
