@@ -1,10 +1,12 @@
-//package Model;
-//
-//public class ActionLogger extends Logger {
-//
-//    private static ActionLogger actionlogger = null;
-//
-//    private ActionLogger(){
-//
-//    }
-//}
+package Model;
+
+public class ActionLogger implements Logger{
+    private static ActionLogger ourInstance = new ActionLogger();
+
+    public static ActionLogger getActionLoggerInstance() {
+        return ourInstance;
+    }
+
+    private ActionLogger() {
+    }
+}
