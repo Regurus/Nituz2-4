@@ -2,7 +2,10 @@ package Model;
 
 import Controller.EASystem;
 
-public class AdminUser {
+import java.util.Observable;
+import java.util.Observer;
+
+public class AdminUser implements Observer {
     private String username;
     private String name;
     private String password;
@@ -19,8 +22,11 @@ public class AdminUser {
     }
 
     public void createCategory(String name){
-        Category resCategory = new Category(systemController.getAvailableCategoryId(),name);
-        systemController.incrementCategoryId();
-        systemController.createNewCategory(resCategory);
+        systemController.createNewCategory(new Category(name));
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+
     }
 }

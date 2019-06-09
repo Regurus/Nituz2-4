@@ -1,11 +1,16 @@
 package Controller;
+import Model.CategoriesDatabase;
 import Model.Category;
 
 public class EASystem {
 
-    static int categoryId = 0;
+    CategoriesDatabase categoriesDB;
 
-    public void createNewComplaint(String targetUser,String division,String descr){
+    public EASystem(CategoriesDatabase categoriesDB) {
+        this.categoriesDB = categoriesDB;
+    }
+
+    public void createNewComplaint(String targetUser, String division, String descr ){
         System.out.println("Complaint Filed:\n To: "+targetUser+"\n From division: "+division+"\n Description: "+descr);
     }
     public void approveComplaint(String id){
@@ -15,19 +20,12 @@ public class EASystem {
     public void createNewCategory(Category ctr){
         //add the given category to the DB;
         // write the category addition to logger
-        System.out.println("inbar");
+        categoriesDB.createCategory(ctr.getName());
+
 
     }
 
-    public int getAvailableCategoryId(){
-        return categoryId;
-    }
 
-    /**
-     * every time category is created we'll call this func so
-     * the next available id would be the value of categoryId
-     */
-    public void incrementCategoryId(){
-        categoryId++;
-    }
+
+
 }

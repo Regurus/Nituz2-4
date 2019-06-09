@@ -1,6 +1,9 @@
 package Model;
 
-public class User {
+
+import java.util.Observable;
+
+public abstract class User extends Observable {
     private String userName;
     private String password;
     private String name;
@@ -18,6 +21,9 @@ public class User {
         this.type=type;
     }
 
+
+
+
     @Override
     public String toString() {
         return "User:  " + "\n"+
@@ -29,6 +35,15 @@ public class User {
                 ", status='" + status + '\'' +
                 ", type='" + type + '\'' ;
     }
+
+    public void createComplaint(String source, String destination, String description,String date){
+        Complaint complaint = new Complaint(source, destination, description, date);
+        setChanged();
+        notifyObservers(complaint);
+        System.out.println(complaint);
+    }
+
+
 
     public boolean isLegal() {
         return true;
