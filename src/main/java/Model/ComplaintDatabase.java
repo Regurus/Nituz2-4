@@ -27,10 +27,9 @@ public class ComplaintDatabase extends Database {
         }
 
     }
+/*
+    public void createComplaint(Complaint tuple){
 
-    public void createTuple(String[] tuple){
-        if(tuple.length!= 5)
-            throw new RuntimeException("Incorrect tuple size, cannot index");
         String sql = "INSERT INTO complaint_table (source,password,name,rank,status,type) VALUES(?,?,?,?,?,?)";
         this.executeUpdateStatement(sql,tuple);
     }
@@ -92,7 +91,7 @@ public class ComplaintDatabase extends Database {
         }
         return user;
     }
-
+*/
 
 
 
