@@ -1,20 +1,26 @@
 package Model;
 
 public class Complaint {
+    private int id;
     private String source; //username
     private String destination; //username
     private String description;
-    private boolean confirm;
+    private String confirm; //pending/yes/no
     private String date;
-    private int id;
+    private String type; // devision name
 
-    public Complaint(int id,String source, String destination, String description,String date) {
+    public Complaint(int id,String source, String destination, String description,String date,String confirm, String type) {
         this.id=id;
         this.source = source;
         this.destination = destination;
         this.description = description;
-        this.confirm = false;
+        this.confirm = confirm;
         this.date = date;
+        this.type = type;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getSource() {
@@ -37,19 +43,23 @@ public class Complaint {
         this.description = description;
     }
 
-    public boolean isConfirm() {
-        return confirm;
-    }
-
-    public void setConfirm(boolean confirm) {
-        this.confirm = confirm;
-    }
-
     public String getDate() {
         return date;
     }
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getConfirm() {
+        return confirm;
+    }
+
+    public void setConfirm(String confirm) {
+        this.confirm = confirm;
     }
 }

@@ -38,7 +38,7 @@ public class windowController {
     }
     @FXML
     public void close(){
-        usersController.endSession();
+        //usersController.endSession();
         this.close.getScene().getWindow().fireEvent(new WindowEvent(this.close.getScene().getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
     }
 

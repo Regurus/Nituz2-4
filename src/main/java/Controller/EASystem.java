@@ -4,11 +4,21 @@ import Model.Category;
 import Model.Complaint;
 
 public class EASystem {
+    private static EASystem eaSystem = null;
+    private CategoriesDatabase categoriesDB;
 
-    CategoriesDatabase categoriesDB;
+    private EASystem(CategoriesDatabase categoriesDB) {
+        if(eaSystem == null){
+            this.categoriesDB = categoriesDB;
+        }
+    }
 
-    public EASystem(CategoriesDatabase categoriesDB) {
-        this.categoriesDB = categoriesDB;
+    public static EASystem eaSystemInstance(CategoriesDatabase categoriesDB) {
+        if(eaSystem == null)
+        {
+            eaSystem = new EASystem(categoriesDB);
+        }
+        return eaSystem;
     }
 
     public void createNewComplaint(String targetUser, String division, String descr ){
