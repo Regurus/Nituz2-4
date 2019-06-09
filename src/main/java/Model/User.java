@@ -41,8 +41,8 @@ public abstract class User extends Observable {
                 ", type='" + type + '\'' ;
     }
 
-    public void createComplaint(String source, String destination, String description,String date){
-        Complaint complaint = new Complaint(usersController.getAvailableComplaintID(),source, destination, description, date);
+    public void createComplaint( String destination, String description,String date){
+        Complaint complaint = new Complaint(usersController.getAvailableComplaintID(),this.userName, destination, description, date, "pending",this.type );
         usersController.incrementComplaintID();
         usersController.addComplaint(complaint);
         setChanged();

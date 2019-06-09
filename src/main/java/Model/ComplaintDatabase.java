@@ -11,12 +11,13 @@ public class ComplaintDatabase extends Database {
         super();
         this.tableName = "complaint_table";
         String sql = "CREATE TABLE IF NOT EXISTS complaint_table (\n"
-                + "	id INTEGER PRIMARY KEY,\n"
+                + "	id text PRIMARY KEY,\n"
                 + "	source text NOT NULL,\n"
                 + "	destination text NOT NULL,\n"
                 + "	description text NOT NULL,\n"
                 + "	confirm text NOT NULL,\n"
-                + "	date text NOT NULL\n"
+                + "	date text NOT NULL,\n"
+                + "	type text NOT NULL\n"
                 + ");";
         try{
             // create a new table
@@ -27,50 +28,67 @@ public class ComplaintDatabase extends Database {
         }
 
     }
-/*
-    public void createComplaint(Complaint tuple){
-
-        String sql = "INSERT INTO complaint_table (source,password,name,rank,status,type) VALUES(?,?,?,?,?,?)";
-        this.executeUpdateStatement(sql,tuple);
+    protected String[] complaintToStringArray(Complaint c){
+        String[] str = new String[7];
+        str[0] = String.valueOf(c.getId());
+        str[1] = c.getSource();
+        str[2] = c.getDestination();
+        str[3] = c.getDescription();
+        str[4] = c.getConfirm();
+        str[5] = c.getDate();
+        str[6] = c.getType();
+        return str;
     }
-    public void editTuple(String field, String newValue, String username){
-        String sql = "UPDATE users_table SET "+field+" = ? "
-                + "WHERE username = ?";
-        String[] args = {newValue,username};
+
+    public void createComplaint(Complaint c){
+        String [] complaint = complaintToStringArray(c);
+        String sql = "INSERT INTO complaint_table (id,source,destination,description,confirm,date,type) VALUES(?,?,?,?,?,?,?)";
+        this.executeUpdateStatement(sql,complaint);
+    }
+    public void editTuple(String field, String newValue, int id){
+        String sql = "UPDATE complaint_table SET "+field+" = ? "
+                + "WHERE id = ?";
+        String[] args = {newValue,String.valueOf(id)};
         this.executeUpdateStatement(sql,args);
     }
 
-    public void deleteTuple(String username){
-        String sql = "DELETE FROM users_table WHERE username = ?";
-        String[] args = {username};
+    public void editConfirmation(String newValue, int id){
+        String sql = "UPDATE complaint_table SET confirm = ? "
+                + "WHERE id = ?";
+        String[] args = {newValue,String.valueOf(id)};
         this.executeUpdateStatement(sql,args);
     }
 
-    public User getByUsername(String username){
-        String sql = "SELECT * " + "FROM users_table WHERE username = ?";
-        String[] args = {username};
+    public void deleteByID(int id){
+        String sql = "DELETE FROM complaint_table WHERE id = ?";
+        String[] args = {String.valueOf(id)};
+        this.executeUpdateStatement(sql,args);
+    }
+
+
+    public Complaint getByID(int id){
+        String sql = "SELECT * " + "FROM complaint_table WHERE id = ?";
+        String[] args = {String.valueOf(id)};
+        ResultSet rs = this.executeGetStatement(sql,args);
+        ArrayList<Complaint> c = parseResultSet(rs);
+        return c.get(0);
+    }
+
+    public ArrayList<Complaint> getUserComplaints(String source){
+        String sql = "SELECT * FROM complaint_table WHERE source = ?";
+        String[] args = {source};
         ResultSet rs = this.executeGetStatement(sql,args);
         return parseResultSet(rs);
     }
 
-    public ArrayList<User> getUsers(){
-        String sql = "SELECT * " + "FROM users_table ";
-        String[] args = null;
+    public ArrayList<Complaint> getDivisionComplaints(String type){
+        String sql = "SELECT * FROM complaint_table WHERE type = ?";
+        String[] args = {type};
         ResultSet rs = this.executeGetStatement(sql,args);
-        ArrayList<User> res = new ArrayList<User>();
-        try{
-            while (rs.next()) {
-                res.add(new User(rs.getString("username"), rs.getString("password"),
-                        rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
-            }
-        }
-        catch (SQLException e ) {
-            System.out.println(e.getMessage());
-        }
-        return res;
+        return parseResultSet(rs);
     }
-    private User parseResultSet(ResultSet rs){
+
+    private ArrayList<Complaint> parseResultSet(ResultSet rs){
         boolean exists;
         try {
             exists = rs.next();
@@ -80,18 +98,22 @@ public class ComplaintDatabase extends Database {
         }
         if(!exists)
             return null;
-        User user = null;
+        ArrayList <Complaint> complaint = new ArrayList<Complaint>();
         try {
-            user = new User(rs.getString("username"), rs.getString("password"),
-                    rs.getString("name"), rs.getString("rank"),
-                    rs.getString("status"), rs.getString("type"));
+            complaint.add(new Complaint(Integer.parseInt(rs.getString("id")), rs.getString("source"),
+                    rs.getString("destination"), rs.getString("description"),
+                    rs.getString("confirm"), rs.getString("date"), rs.getString("type")));
+            while(rs.next()) {
+                complaint.add(new Complaint(Integer.parseInt(rs.getString("id")), rs.getString("source"),
+                        rs.getString("destination"), rs.getString("description"),
+                        rs.getString("confirm"), rs.getString("date"), rs.getString("type")));
+            }
         }
         catch (SQLException e){
             System.out.println("Information retrieval error.");
         }
-        return user;
+        return complaint;
     }
-*/
 
 
 

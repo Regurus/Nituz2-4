@@ -82,7 +82,7 @@ public class MainUIController extends windowController {
             String selected = (String)((ListView)mouseEvent.getSource()).getSelectionModel().getSelectedItems().get(0);
             //get System instance
             //get Complaint Object
-            MainUIController.selected = new Complaint("me","you","f you","today");
+            //MainUIController.selected = new Complaint("me","you","f you","today");
             this.openNewWindow("Review Complaint","ComplaintDialog.fxml",600,400);
         }
     }
