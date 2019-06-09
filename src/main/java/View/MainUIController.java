@@ -155,8 +155,8 @@ public class MainUIController extends windowController {
         }
         if(flag)
             return;
-        EASystem sys = new EASystem();//TODO change this
-        sys.createNewComplaint(this.compl_username.getText(),(String)this.compl_department.getValue(),this.compl_msg.getText());
+     //   EASystem sys = new EASystem();//TODO change this
+      //  sys.createNewComplaint(this.compl_username.getText(),(String)this.compl_department.getValue(),this.compl_msg.getText());
     }
     @FXML
     private void test(MouseEvent event){
