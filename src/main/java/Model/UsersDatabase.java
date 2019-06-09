@@ -58,8 +58,8 @@ public class UsersDatabase extends Database {
         return parseResultSet(rs);
     }
 
-    public ArrayList<User> getUsers(){
-        String sql = "SELECT * " + "FROM users_table ";
+    public ArrayList<User> getUsers(String type){
+        String sql = "SELECT * " + "FROM users_table WHERE type = '" + type+"'";
         String[] args = null;
         ResultSet rs = this.executeGetStatement(sql,args);
         ArrayList<User> res = new ArrayList<User>();

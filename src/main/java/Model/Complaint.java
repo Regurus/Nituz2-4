@@ -1,8 +1,8 @@
 package Model;
 
 public class Complaint {
-    private String source;
-    private String destination;
+    private String source; //username
+    private String destination; //username
     private String description;
     private boolean confirm;
     private String date;
