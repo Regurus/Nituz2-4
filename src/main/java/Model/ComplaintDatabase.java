@@ -115,6 +115,25 @@ public class ComplaintDatabase extends Database {
         return complaint;
     }
 
+    //get last index in the table
+    public int getLastIndex(){
+        String sql = "SELECT * " + "FROM complaint_table";
+        String[] args = null;
+        ResultSet rs = this.executeGetStatement(sql,args);
+        int last = 1;
+        try {
+            while(rs.next()){
+                int cur = Integer.parseInt(rs.getString("id"));
+                if(cur > last)
+                    last =cur;
+            }
+        }
+        catch (SQLException e){
+            System.out.println("Information retrieval error.");
+        }
+        return last;
+    }
+
 
 
 }
