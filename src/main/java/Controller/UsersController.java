@@ -14,15 +14,25 @@ public class UsersController{
     private ArrayList<Fireman> firemen;
     private ComplaintDatabase complaintDB;
     private UsersDatabase usersDB;
+    private static UsersController usersController = null;
 
+    private UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB)
+    {
+        if(usersController == null){
+            this.dispatchers = usersDB.getAllDispatchers();
+            this.emergencyMedicalTechnicians = usersDB.getAllEmergencyMedicalTechnicians();
+            this.policemen = usersDB.getAllPolicemen();
+            this.firemen = usersDB.getAllFiremen();
+            this.usersDB = usersDB;
+            this.complaintDB = complaintDB;
 
-    public UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB) {
-       // this.dispatchers = userDB.getUsersByType("Dispatcher");
-       // this.emergencyMedicalTechnicians = userDB.getUsersByType("EmergencyMedicalTechnician");
-       // this.policemen = userDB.getUsersByType("Policeman");
-       // this.firemen = userDB.getUsersByType("Fireman");
-        this.usersDB = usersDB;
-        this.complaintDB = complaintDB;
+        }
+    }
+
+    public static UsersController UsersControllerInstance(UsersDatabase usersDB ,ComplaintDatabase complaintDB) {
+        if (usersController == null)
+            usersController = new UsersController(usersDB ,complaintDB);
+        return usersController;
     }
 
     private static String currentLogin;//should be updated to null on exit
