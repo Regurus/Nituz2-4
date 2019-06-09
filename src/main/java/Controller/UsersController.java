@@ -19,10 +19,10 @@ public class UsersController{
     private UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB)
     {
         if(usersController == null){
-            this.dispatchers = usersDB.getAllDispatchers("Dispatcher");
-            this.emergencyMedicalTechnicians = usersDB.getAllEmergencyMedicalTechnicians("EmergencyMedicalTechnician");
-            this.policemen = usersDB.getAllPolicemen("Policeman");
-            this.firemen = usersDB.getAllFiremen("Fireman");
+            this.dispatchers = usersDB.getAllDispatchers();
+            this.emergencyMedicalTechnicians = usersDB.getAllEmergencyMedicalTechnicians();
+            this.policemen = usersDB.getAllPolicemen();
+            this.firemen = usersDB.getAllFiremen();
             this.usersDB = usersDB;
             this.complaintDB = complaintDB;
         }
