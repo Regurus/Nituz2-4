@@ -1,4 +1,5 @@
 
+import Model.CategoriesDatabase;
 import Model.UsersDatabase;
 import Model.User;
 import javafx.application.Application;
@@ -35,7 +36,6 @@ public class Main extends Application {
         //initialize database connections
         //open Login UI
         launch(args);
-
 
     }
 }

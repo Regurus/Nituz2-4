@@ -2,17 +2,30 @@ package Controller;
 
 
 
-import Model.User;
-import Model.UsersDatabase;
+import Model.*;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class UsersController{
+    public ArrayList<Dispatcher> dispatchers;
+    public ArrayList<EmergencyMedicalTechnician> emergencyMedicalTechnicians;
+    public ArrayList<Policeman> policemen;
+    public ArrayList<Fireman> firemen;
+
+
     private static String currentLogin;//should be updated to null on exit
     static UsersDatabase activeConnection;
     public UsersController(){
         if(activeConnection==null)
-        activeConnection = new UsersDatabase();}
+        {
+            activeConnection = new UsersDatabase();
+            dispatchers = new ArrayList<Dispatcher>();
+            emergencyMedicalTechnicians = new ArrayList<>();
+            emergencyMedicalTechnicians = new ArrayList<>();
+        }
+
+    }
     public boolean combinationApprove(String login,String password){
         User account = activeConnection.getByUsername(login);
         if(account==null)
