@@ -25,6 +25,7 @@ public class UsersController{
             this.firemen = usersDB.getAllFiremen();
             this.usersDB = usersDB;
             this.complaintDB = complaintDB;
+
         }
     }
 
