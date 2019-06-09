@@ -1,5 +1,7 @@
 package Model;
 
+import Controller.UsersController;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -56,18 +58,60 @@ public class UsersDatabase extends Database {
         String[] args = {username};
         ResultSet rs = this.executeGetStatement(sql,args);
         return parseResultSet(rs);
+
+
     }
 
-    public ArrayList<User> getUsers(String type){
-        String sql = "SELECT * " + "FROM users_table WHERE type = '" + type+"'";
-        String[] args = null;
+    public ArrayList<Policeman> getAllPolicemen(){
+        String sql = "SELECT * " + "FROM users_table WHERE type = ?";
+        String[] args = {"Policeman"};
         ResultSet rs = this.executeGetStatement(sql,args);
-        ArrayList<User> res = new ArrayList<User>();
+        ArrayList<Policeman> res = new ArrayList<Policeman>();
         try{
             while (rs.next()) {
-                res.add(new User(rs.getString("username"), rs.getString("password"),
+                res.add(new Policeman(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
+                        rs.getString("status"), rs.getString("type"), new UsersController()));
+
+
+            }
+        }
+        catch (SQLException e ) {
+            System.out.println(e.getMessage());
+        }
+        return res;
+    }
+    public ArrayList<Fireman> getAllFiremen(){
+        String sql = "SELECT * " + "FROM users_table WHERE type = ?";
+        String[] args = {"Fireman"};
+        ResultSet rs = this.executeGetStatement(sql,args);
+        ArrayList<Fireman> res = new ArrayList<Fireman>();
+        try{
+            while (rs.next()) {
+                res.add(new Fireman(rs.getString("username"), rs.getString("password"),
+                        rs.getString("name"), rs.getString("rank"),
+                        rs.getString("status"), rs.getString("type"), new UsersController()));
+
+
+            }
+        }
+        catch (SQLException e ) {
+            System.out.println(e.getMessage());
+        }
+        return res;
+    }
+    public ArrayList<Dispatcher> getAllDispatchers(){
+        String sql = "SELECT * " + "FROM users_table WHERE type = ?";
+        String[] args = {"Dispatcher"};
+        ResultSet rs = this.executeGetStatement(sql,args);
+        ArrayList<Dispatcher> res = new ArrayList<Dispatcher>();
+        try{
+            while (rs.next()) {
+                res.add(new Dispatcher(rs.getString("username"), rs.getString("password"),
+                        rs.getString("name"), rs.getString("rank"),
+                        rs.getString("status"), rs.getString("type"), new UsersController()));
+
+
             }
         }
         catch (SQLException e ) {
@@ -76,6 +120,24 @@ public class UsersDatabase extends Database {
         return res;
     }
 
+    public ArrayList<EmergencyMedicalTechnician> getAllEmergencyMedicalTechnicians(){
+        String sql = "SELECT * " + "FROM users_table WHERE type = ?";
+        String[] args = {"EmergencyMedicalTechnician"};
+        ResultSet rs = this.executeGetStatement(sql,args);
+        ArrayList<EmergencyMedicalTechnician> res = new ArrayList<EmergencyMedicalTechnician>();
+        try{
+            while (rs.next()) {
+                res.add(new EmergencyMedicalTechnician(rs.getString("username"), rs.getString("password"),
+                        rs.getString("name"), rs.getString("rank"),
+                        rs.getString("status"), rs.getString("type"), new UsersController()));
+            }
+        }
+        catch (SQLException e ) {
+            System.out.println(e.getMessage());
+        }
+        return res;
+    }
+    
     private User parseResultSet(ResultSet rs){
         boolean exists;
         try {
@@ -86,16 +148,33 @@ public class UsersDatabase extends Database {
         }
         if(!exists)
             return null;
-        User user = null;
         try {
-            user = new User(rs.getString("username"), rs.getString("password"),
+            String[] user = {rs.getString("username"), rs.getString("password"),
                     rs.getString("name"), rs.getString("rank"),
-                    rs.getString("status"), rs.getString("type"));
+                    rs.getString("status"), rs.getString("type")};
+            if(user[5].equals("Policeman"))
+            {
+                return new Policeman(user[0],user[1],user[2], user[3],user[4],user[5], new UsersController());
+            }
+            if(user[5].equals("Fireman"))
+            {
+                return new Fireman(user[0],user[1],user[2], user[3],user[4],user[5], new UsersController());
+            }
+            if(user[5].equals("Dispatcher"))
+            {
+                return new Dispatcher(user[0],user[1],user[2], user[3],user[4],user[5], new UsersController());
+            }
+            if(user[5].equals("EmergencyMedicalTechnician"))
+            {
+                return new EmergencyMedicalTechnician(user[0],user[1],user[2], user[3],user[4],user[5], new UsersController());
+            }
+
         }
         catch (SQLException e){
             System.out.println("Information retrieval error.");
         }
-        return user;
+        System.out.println("no users from type !");
+        return null;
     }
 
 }
