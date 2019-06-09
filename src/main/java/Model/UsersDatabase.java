@@ -58,6 +58,8 @@ public class UsersDatabase extends Database {
         String[] args = {username};
         ResultSet rs = this.executeGetStatement(sql,args);
         return parseResultSet(rs);
+
+
     }
 
     public ArrayList<Policeman> getAllPolicemen(){
