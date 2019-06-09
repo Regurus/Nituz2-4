@@ -19,8 +19,6 @@ public class AdminUser {
     }
 
     public void createCategory(String name){
-        Category resCategory = new Category(systemController.getAvailableCategoryId(),name);
-        systemController.incrementCategoryId();
-        systemController.createNewCategory(resCategory);
+        systemController.createNewCategory(new Category(name));
     }
 }
