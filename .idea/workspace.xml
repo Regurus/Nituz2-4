@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6eb63ddc-046f-47c8-8315-3b8e50b2e648" name="Default Changelist" comment="">
+    <list default="true" id="6eb63ddc-046f-47c8-8315-3b8e50b2e648" name="Default Changelist" comment="17:07">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ComplaintDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ComplaintDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/EmergencyMedicalTechnician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/EmergencyMedicalTechnician.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainUIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,35 +14,35 @@
     <session id="-661436381">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="13" />
+          <entry key="java" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="13" />
+          <entry key="JAVA" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="648" />
-          <entry key="txt" value="10" />
+          <entry key="java" value="680" />
+          <entry key="txt" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="648" />
-          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="JAVA" value="680" />
+          <entry key="PLAIN_TEXT" value="18" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-127">
-              <caret line="137" column="4" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
+            <state relative-caret-position="424">
+              <caret line="59" column="29" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getPolicemen#0;class#UsersDatabase#0" />
@@ -59,31 +54,6 @@
                 <element signature="method#getAllEmergencyMedicalTechnicians#0;class#UsersDatabase#0" />
                 <element signature="e#4392#4420#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/View/MainUIController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="143" column="29" lean-forward="true" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#close#0;class#MainUIController#0" />
-                <element signature="method#handleMenuClick#0;class#MainUIController#0" />
-                <element signature="method#setFill#0;class#MainUIController#0" />
-                <element signature="method#updateMenu#0;class#MainUIController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EASystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="8" column="10" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -126,20 +96,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="2">
+              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/EmergencyMedicalTechnician.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="110">
+              <caret line="5" column="124" selection-start-line="5" selection-start-column="124" selection-end-line="5" selection-end-column="144" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Policeman.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Fireman.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="62" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -147,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Dispatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="264">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -157,7 +142,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
-              <caret line="18" column="136" lean-forward="true" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="136" />
+              <caret line="18" column="133" lean-forward="true" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="133" />
             </state>
           </provider>
         </entry>
@@ -165,7 +150,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -175,10 +160,13 @@
         <option value="$PROJECT_DIR$/src/main/java/View/MainUIController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/EASystem.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/UsersController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Complaint.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/EmergencyMedicalTechnician.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Policeman.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Fireman.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Dispatcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java" />
       </list>
     </option>
   </component>
@@ -256,7 +244,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560088663084" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560089528016" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -314,26 +302,26 @@
       <option name="project" value="LOCAL" />
       <updated>1560083368489</updated>
     </task>
-    <task id="LOCAL-00003" summary="UI semi built">
-      <created>1559821606338</created>
+    <task id="LOCAL-00003" summary="17:01">
+      <created>1560088882923</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1559821606338</updated>
+      <updated>1560088882923</updated>
     </task>
-    <task id="LOCAL-00004" summary="yser">
-      <created>1559822715585</created>
+    <task id="LOCAL-00004" summary="17:01">
+      <created>1560089121445</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1559822715585</updated>
+      <updated>1560089121445</updated>
     </task>
-    <task id="LOCAL-00005" summary="yser">
-      <created>1559822744713</created>
+    <task id="LOCAL-00005" summary="17:07">
+      <created>1560089291063</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1559822744713</updated>
+      <updated>1560089291063</updated>
     </task>
     <task id="LOCAL-00006" summary="users">
       <created>1559832596491</created>
@@ -363,7 +351,7 @@
       <option name="project" value="LOCAL" />
       <updated>1560080332629</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -386,8 +374,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013423" side_tool="true" weight="0.031205675" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4986577" weight="0.031205675" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013423" side_tool="true" visible="true" weight="0.06241135" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4986577" visible="true" weight="0.06241135" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.32907802" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -436,7 +424,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="14:54" />
     <MESSAGE value="15:28" />
-    <option name="LAST_COMMIT_MESSAGE" value="15:28" />
+    <MESSAGE value="17:01" />
+    <MESSAGE value="17:07" />
+    <option name="LAST_COMMIT_MESSAGE" value="17:07" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java</url>
+          <line>121</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Database.java">
@@ -463,13 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Policeman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="59" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -515,29 +510,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-127">
-          <caret line="137" column="4" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getPolicemen#0;class#UsersDatabase#0" />
-            <element signature="e#2241#2252#0" expanded="true" />
-            <element signature="method#getAllPolicemen#1;class#UsersDatabase#0" />
-            <element signature="e#2936#2945#0" expanded="true" />
-            <element signature="method#getAllDispatchers#0;class#UsersDatabase#0" />
-            <element signature="e#3657#3669#0" expanded="true" />
-            <element signature="method#getAllEmergencyMedicalTechnicians#0;class#UsersDatabase#0" />
-            <element signature="e#4392#4420#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -550,13 +524,6 @@
             <element signature="method#combinationApprove#0;class#UsersController#0" />
             <element signature="method#passwordApprove#0;class#UsersController#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Dispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -577,17 +544,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/EmergencyMedicalTechnician.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="18" column="136" lean-forward="true" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="136" />
+        <state relative-caret-position="110">
+          <caret line="5" column="124" selection-start-line="5" selection-start-column="124" selection-end-line="5" selection-end-column="144" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/EmergencyMedicalTechnician.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Fireman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="132">
+          <caret line="6" column="62" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Policeman.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Dispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="18" column="133" lean-forward="true" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="59" column="29" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getPolicemen#0;class#UsersDatabase#0" />
+            <element signature="e#2241#2252#0" expanded="true" />
+            <element signature="method#getAllPolicemen#1;class#UsersDatabase#0" />
+            <element signature="e#2936#2945#0" expanded="true" />
+            <element signature="method#getAllDispatchers#0;class#UsersDatabase#0" />
+            <element signature="e#3657#3669#0" expanded="true" />
+            <element signature="method#getAllEmergencyMedicalTechnicians#0;class#UsersDatabase#0" />
+            <element signature="e#4392#4420#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

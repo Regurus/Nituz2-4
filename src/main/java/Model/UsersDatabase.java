@@ -1,5 +1,7 @@
 package Model;
 
+import Controller.UsersController;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -67,7 +69,7 @@ public class UsersDatabase extends Database {
             while (rs.next()) {
                 res.add(new Policeman(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
+                        rs.getString("status"), rs.getString("type"), new UsersController()));
 
 
             }
@@ -86,7 +88,7 @@ public class UsersDatabase extends Database {
             while (rs.next()) {
                 res.add(new Fireman(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
+                        rs.getString("status"), rs.getString("type"), new UsersController()));
 
 
             }
@@ -105,7 +107,7 @@ public class UsersDatabase extends Database {
             while (rs.next()) {
                 res.add(new Dispatcher(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
+                        rs.getString("status"), rs.getString("type"), new UsersController()));
 
 
             }
@@ -125,9 +127,7 @@ public class UsersDatabase extends Database {
             while (rs.next()) {
                 res.add(new EmergencyMedicalTechnician(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
-
-
+                        rs.getString("status"), rs.getString("type"), new UsersController()));
             }
         }
         catch (SQLException e ) {
@@ -152,19 +152,19 @@ public class UsersDatabase extends Database {
                     rs.getString("status"), rs.getString("type")};
             if(user[5].equals("Policeman"))
             {
-                return new Policeman(user[0],user[1],user[2], user[3],user[4],user[5]);
+                return new Policeman(user[0],user[1],user[2], user[3],user[4],user[5], new UsersController());
             }
             if(user[5].equals("Fireman"))
             {
-                return new Fireman(user[0],user[1],user[2], user[3],user[4],user[5]);
+                return new Fireman(user[0],user[1],user[2], user[3],user[4],user[5], new UsersController());
             }
             if(user[5].equals("Dispatcher"))
             {
-                return new Dispatcher(user[0],user[1],user[2], user[3],user[4],user[5]);
+                return new Dispatcher(user[0],user[1],user[2], user[3],user[4],user[5], new UsersController());
             }
             if(user[5].equals("EmergencyMedicalTechnician"))
             {
-                return new EmergencyMedicalTechnician(user[0],user[1],user[2], user[3],user[4],user[5]);
+                return new EmergencyMedicalTechnician(user[0],user[1],user[2], user[3],user[4],user[5], new UsersController());
             }
 
         }
