@@ -36,8 +36,11 @@ public abstract class User extends Observable {
                 ", type='" + type + '\'' ;
     }
 
-    public void createComplaint(){
-
+    public void createComplaint(String source, String destination, String description,String date){
+        Complaint complaint = new Complaint(source, destination, description, date);
+        setChanged();
+        notifyObservers(complaint);
+        System.out.println(complaint);
     }
 
 
