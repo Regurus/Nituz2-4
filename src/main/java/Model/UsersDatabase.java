@@ -1,7 +1,4 @@
 package Model;
-
-import Controller.UsersController;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -16,7 +13,7 @@ public class UsersDatabase extends Database {
                 + "	username text PRIMARY KEY,\n"
                 + "	password text NOT NULL,\n"
                 + "	name text NOT NULL,\n"
-                + "	rank string NOT NULL,\n"
+                + "	rank text NOT NULL,\n"
                 + "	status text NOT NULL,\n"
                 + "	type text NOT NULL\n"
                 + ");";
@@ -72,8 +69,6 @@ public class UsersDatabase extends Database {
                 res.add(new Policeman(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
                         rs.getString("status"), rs.getString("type"), UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase())));
-
-
             }
         }
         catch (SQLException e ) {
@@ -169,7 +164,7 @@ public class UsersDatabase extends Database {
 
         }
         catch (SQLException e){
-            System.out.println("Information retrieval error.");
+            System.out.println("parseResultSet UserDatabase error.");
         }
         System.out.println("no users from type !");
         return null;
