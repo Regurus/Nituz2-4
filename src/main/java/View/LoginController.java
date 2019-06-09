@@ -4,7 +4,6 @@ import Controller.UsersController;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.WindowEvent;
 
 
 public class LoginController extends windowController {
@@ -14,12 +13,8 @@ public class LoginController extends windowController {
     @FXML
     private PasswordField password;
     @FXML
-    public void close(){
-        usersController.endSession();
-        this.username.getScene().getWindow().fireEvent(new WindowEvent(this.username.getScene().getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
-    }
-    @FXML
     public void enter(){
-
+        //TODO add login credentials logic
+        this.openNewWindowAndCloseOld("Emer-Agency Main","MainUI.fxml",900,700);
     }
 }

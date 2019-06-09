@@ -1,5 +1,6 @@
 package Controller;
 import Model.Category;
+import Model.Complaint;
 
 public class EASystem {
 
@@ -10,7 +11,9 @@ public class EASystem {
     }
     public void approveComplaint(String id){
         System.out.println("Complaint approved: "+id);
-
+    }
+    public Complaint getComplaintById(String id){
+        return null;
     }
     public void createNewCategory(Category ctr){
         //add the given category to the DB;
