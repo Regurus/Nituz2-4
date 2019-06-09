@@ -1,12 +1,19 @@
 package Model;
 
 public class ActionLogger implements Logger{
-    private static ActionLogger ourInstance = new ActionLogger();
-
-    public static ActionLogger getActionLoggerInstance() {
-        return ourInstance;
+    private String path;
+    private static ActionLogger actionLogger = null;
+    private ActionLogger(String path)
+    {
+        if(actionLogger == null){
+            this.path = path;
+        }
     }
 
-    private ActionLogger() {
+    public static ActionLogger actionLoggerInstance(String path){
+        if(actionLogger == null){
+            actionLogger = new ActionLogger(path);
+        }
+        return actionLogger;
     }
 }
