@@ -1,7 +1,10 @@
 package Model;
 
 
+import Controller.UsersController;
+
 import java.util.Observable;
+
 
 public abstract class User extends Observable {
     private String userName;
@@ -10,15 +13,17 @@ public abstract class User extends Observable {
     private String rank;
     private String status;
     private String type;
+    private UsersController usersController;
 
 
-    public User(String userName, String password, String name,String rank, String status,String type) {
+    public User(String userName, String password, String name,String rank, String status,String type, UsersController usersController) {
         this.userName = userName;
         this.password = password;
         this.name = name;
         this.rank = rank;
         this.status=status;
         this.type=type;
+        this.usersController=usersController;
     }
 
 
@@ -38,9 +43,10 @@ public abstract class User extends Observable {
 
     public void createComplaint(String source, String destination, String description,String date){
         Complaint complaint = new Complaint(source, destination, description, date);
+        usersController.addComplaint(complaint);
         setChanged();
         notifyObservers(complaint);
-        System.out.println(complaint);
+
     }
 
 

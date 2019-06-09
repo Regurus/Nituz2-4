@@ -8,11 +8,22 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class UsersController{
-    public ArrayList<Dispatcher> dispatchers;
-    public ArrayList<EmergencyMedicalTechnician> emergencyMedicalTechnicians;
-    public ArrayList<Policeman> policemen;
-    public ArrayList<Fireman> firemen;
+    private ArrayList<Dispatcher> dispatchers;
+    private ArrayList<EmergencyMedicalTechnician> emergencyMedicalTechnicians;
+    private ArrayList<Policeman> policemen;
+    private ArrayList<Fireman> firemen;
+    private ComplaintDatabase complaintDB;
+    private UsersDatabase usersDB;
 
+
+    public UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB) {
+       // this.dispatchers = userDB.getUsersByType("Dispatcher");
+       // this.emergencyMedicalTechnicians = userDB.getUsersByType("EmergencyMedicalTechnician");
+       // this.policemen = userDB.getUsersByType("Policeman");
+       // this.firemen = userDB.getUsersByType("Fireman");
+        this.usersDB = usersDB;
+        this.complaintDB = complaintDB;
+    }
 
     private static String currentLogin;//should be updated to null on exit
     static UsersDatabase activeConnection;
@@ -25,6 +36,11 @@ public class UsersController{
             policemen = new ArrayList<Policeman>();
             firemen = new ArrayList<Fireman>();
         }
+    }
+
+    public static void addComplaint(Complaint complaint) {
+       // ComplaintDatabase.createComplaint(complaint);
+        //write the complaint addition to logger
     }
 
 
