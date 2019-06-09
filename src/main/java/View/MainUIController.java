@@ -63,11 +63,26 @@ public class MainUIController extends windowController {
     private ListView adm_scr_cpl_list;
     //</editor-fold>
 
+    //<editor-fold desc="User Screen">
+    @FXML
+    private Label username;
+    @FXML
+    private Label division;
+    @FXML
+    private Label name;
+    @FXML
+    private Label rank;
+    @FXML
+    private Label status;
+    @FXML
+    private Label perm_lvl;
+    //</editor-fold>
     public void initialize() {
         this.updateMenu(this.depressedBtn);
         search_scr.toFront();
         this.init_cpl();
         this.init_adm();
+        this.init_user();
     }
     private void init_cpl(){
         this.compl_department.getItems().addAll("Fire Department","Police Department","Medical Department","Dispatcher");
@@ -75,6 +90,14 @@ public class MainUIController extends windowController {
     private void init_adm(){
         adm_scr_cpl_list.getItems().addAll("c1","c2","c3");
         adm_scr_cpl_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    }
+    private void init_user(){
+        this.username.setText("Test User");
+        this.division.setText("QA :(");
+        this.name.setText("Developer");
+        this.rank.setText("Generalisimus");
+        this.status.setText("Active");
+        this.perm_lvl.setText("Admin");
     }
     @FXML
     private void openAdmComplaintDialog(MouseEvent mouseEvent){
@@ -155,8 +178,8 @@ public class MainUIController extends windowController {
         }
         if(flag)
             return;
-        EASystem sys = new EASystem();//TODO change this
-        sys.createNewComplaint(this.compl_username.getText(),(String)this.compl_department.getValue(),this.compl_msg.getText());
+        //EASystem sys = new EASystem();//TODO change this
+        //sys.createNewComplaint(this.compl_username.getText(),(String)this.compl_department.getValue(),this.compl_msg.getText());
     }
     @FXML
     private void test(MouseEvent event){
