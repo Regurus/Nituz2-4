@@ -59,12 +59,6 @@ public class ComplaintDatabase extends Database {
         this.executeUpdateStatement(sql,args);
     }
 
-    public void deleteByID(int id){
-        String sql = "DELETE FROM complaint_table WHERE id = ?";
-        String[] args = {String.valueOf(id)};
-        this.executeUpdateStatement(sql,args);
-    }
-
 
     public Complaint getByID(int id){
         String sql = "SELECT * " + "FROM complaint_table WHERE id = ?";

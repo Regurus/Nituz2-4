@@ -17,6 +17,7 @@ public class UsersController{
     private static ComplaintDatabase complaintDB;
     private UsersDatabase usersDB;
     private AdminDatabase adminUserDB;
+    private WarningDatabase warningDB;
     private static UsersController usersController = null;
     private static int complaintID ;
     private User loginUser;
@@ -25,12 +26,13 @@ public class UsersController{
 
 
 
-    private UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB, AdminDatabase adminUserDB)
+    private UsersController(UsersDatabase usersDB ,ComplaintDatabase complaintDB, AdminDatabase adminUserDB, WarningDatabase warningDB)
     {
         if(usersController == null){
             this.usersDB = usersDB;
             this.complaintDB = complaintDB;
             this.adminUserDB = adminUserDB;
+            this.warningDB = warningDB;
             this.dispatchers = usersDB.getAllDispatchers();
             this.emergencyMedicalTechnicians = usersDB.getAllEmergencyMedicalTechnicians();
             this.policemen = usersDB.getAllPolicemen();
@@ -42,7 +44,7 @@ public class UsersController{
 
     public static UsersController UsersControllerInstance() {
         if (usersController == null){
-            usersController = new UsersController(new UsersDatabase() ,new ComplaintDatabase(), new AdminDatabase());
+            usersController = new UsersController(new UsersDatabase() ,new ComplaintDatabase(), new AdminDatabase(), new WarningDatabase());
             complaintID = complaintDB.getLastIndex()+1;
         }
         //complaintDB.getLastIndex() returns the last id exist in complaint table
@@ -107,16 +109,30 @@ public class UsersController{
         }
     }
 
-    public void removeComplaint(int complaintId)
+    /**
+     * if the admin is not approving the complaint we'll call this func
+     * change the complaint status to "no"
+     * @param complaintId
+     */
+    public void declineComplaint(int complaintId)
     {
-        complaintDB.deleteByID(complaintId);
+        complaintDB.editConfirmation("no", complaintId);
     }
 
     public void createNewWarning(String usernameDest, int complaintId){
+        if(usernameDest.equals(""))
+            return;
+        Warning warning = new Warning(complaintId,usernameDest);
+        warningDB.createWarning(warning);
+        
 
-    }//TODO
+    }
 
-    public ArrayList<Complaint> getAllComplaints(String division){return null;}//TODO
+    public ArrayList<Complaint> getAllComplaints(String division){
+        return complaintDB.getDivisionComplaints(division);
+    }
+
+
 
     public boolean passwordApprove(String password){
         //approves only passwords that include at least 1 number, 1 capital letter and one regular letter.
