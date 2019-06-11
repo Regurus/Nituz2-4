@@ -22,7 +22,7 @@ public class LoginController extends windowController {
 
     @FXML
     public void enter(){
-        /*String login = this.username.getText();
+        String login = this.username.getText();
         String pass = this.password.getText();
         UsersController controller = UsersController.UsersControllerInstance();
         boolean logged = controller.approveLogIn(login,pass);
@@ -31,7 +31,6 @@ public class LoginController extends windowController {
             return;
         }
         MainUIController.currentUser = login;
-        *///TODO remove comment on completion
 
         this.openNewWindowAndCloseOld("Emer-Agency Main","MainUI.fxml",900,700);
     }

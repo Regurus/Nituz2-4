@@ -27,11 +27,11 @@ public class Main extends Application {
 
     }
     public static void main(String[] args) {
-        //launch(args);
+        launch(args);
 
-        CategoriesDatabase cd = new CategoriesDatabase();
+        //CategoriesDatabase cd = new CategoriesDatabase();
 
-        System.out.println(cd.isExist("dfvgfv"));
+        //System.out.println(cd.isExist("dfvgfv"));
         /*ComplaintDatabase cd = new ComplaintDatabase();
         System.out.println(cd.getLastIndex());
 

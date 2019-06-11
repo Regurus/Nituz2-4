@@ -1,9 +1,11 @@
 package View;
 
 import Controller.EASystem;
+import Model.AdminUser;
 import Model.Complaint;
 import Controller.UsersController;
 
+import Model.User;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.fxml.FXML;
@@ -105,20 +107,20 @@ public class MainUIController extends windowController {
 
             return;
         }
-        /*ArrayList<Complaint> list = UsersController.UsersControllerInstance().getAllComplaints(EASystem.eaSystemInstance().getAdmin().getDivision());
+        ArrayList<Complaint> list = UsersController.UsersControllerInstance().getAllComplaints(EASystem.eaSystemInstance().getAdmin().getDivision());
+        if(list==null)
+            return;
         ArrayList<String> values = new ArrayList<String>();
         for(Complaint c :list){
             values.add(c.getId()+" :: "+c.getDestination());
         }
         adm_scr_cpl_list.getItems().addAll(values.toArray());
-        adm_scr_cpl_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);*///TODO uncomment this
-        adm_scr_cpl_list.getItems().addAll("123123 :: sucker","314354 :: skhdfgkhsd");
         adm_scr_cpl_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
     private void init_user(){
-        /*if(UsersController.UsersControllerInstance()!=null){
+        if(UsersController.UsersControllerInstance()!=null){
             this.isAdmin = false;
-            User active = UsersController.UsersControllerInstance().getUserByUsername(MainUIController.currentUser);
+            User active = UsersController.UsersControllerInstance().getLoginUser();
             this.username.setText(active.getUserName());
             this.division.setText(active.getType());
             this.name.setText(active.getName());
@@ -129,14 +131,13 @@ public class MainUIController extends windowController {
         else{
             this.isAdmin = true;
             AdminUser admin =  EASystem.eaSystemInstance().getAdmin();
-            this.username.setText(admin.getUserName());
+            this.username.setText(admin.getUsername());
             this.division.setText(admin.getDivision());
             this.name.setText(admin.getName());
             this.rank.setText("N/A");
             this.status.setText("Active");
             this.perm_lvl.setText("Admin");
-        }*///TODO uncomment this
-
+        }
     }
     @FXML
     private void openAdmComplaintDialog(MouseEvent mouseEvent){
