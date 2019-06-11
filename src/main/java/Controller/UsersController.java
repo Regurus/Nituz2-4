@@ -7,9 +7,11 @@ import Model.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.regex.Pattern;
 
-public class UsersController{
+public class UsersController implements Observer {
     private ArrayList<Dispatcher> dispatchers;
     private ArrayList<EmergencyMedicalTechnician> emergencyMedicalTechnicians;
     private ArrayList<Policeman> policemen;
@@ -82,6 +84,7 @@ public class UsersController{
             return false;
 
         this.loginUser = account;
+        loginUser.addObserver(this);
         return true;
     }
 
@@ -97,18 +100,17 @@ public class UsersController{
      * @param description
      * @return
      */
-    public boolean createNewComplaint(String destination, String description){
-        if(loginUser!=null){
-            if(usersDB.getByUsername(loginUser.getUserName()).getType().equals(usersDB.getByUsername(destination).getType()))
-                return false;
-            Complaint complaint = new Complaint(complaintID,loginUser.getUserName(),destination,description,getDateAndTime(),"pending",usersDB.getByUsername(loginUser.getUserName()).getType());
-            complaintID++;
-            complaintDB.createComplaint(complaint);
-            return true;
-        }else{
-            return false;
+    public boolean createNewComplaint(String destination, String description) {
+        if (loginUser != null) {
+            if (usersDB.getByUsername(loginUser.getUserName()).getType().equals(usersDB.getByUsername(destination).getType()) && usersDB.getByUsername(destination).getStatus().equals("active")) {
+                loginUser.createComplaint(complaintID, destination, description);
+                complaintID++;
+                return true;
+            }
         }
+        return false;
     }
+
 
     /**
      * if the admin is not approving the complaint we'll call this func
@@ -146,10 +148,10 @@ public class UsersController{
     }
 
 
-    private String getDateAndTime(){
-        Date currentDate = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss.SSS");
-        return formatter.format(currentDate);
+
+    @Override
+    public void update(Observable o, Object arg) {
+        complaintDB.createComplaint((Complaint) arg);
     }
 
 }
