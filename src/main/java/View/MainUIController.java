@@ -216,10 +216,6 @@ public class MainUIController extends windowController {
             this.compl_err_msg.setText(this.compl_err_msg.getText()+"Please insert user\n");
             flag = true;
         }
-        if(this.compl_department.getValue()==null){
-            this.compl_err_msg.setText(this.compl_err_msg.getText()+"Please select division\n");
-            flag = true;
-        }
         if(this.compl_msg.getText().length()==0){
             this.compl_err_msg.setText(this.compl_err_msg.getText()+"Please describe the reason\n");
             flag = true;
