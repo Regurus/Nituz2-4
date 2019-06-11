@@ -10,9 +10,9 @@ public class ActionLogger implements Logger{
         }
     }
 
-    public static ActionLogger actionLoggerInstance(String path){
+    public static ActionLogger actionLoggerInstance(){
         if(actionLogger == null){
-            actionLogger = new ActionLogger(path);
+            actionLogger = new ActionLogger("logger");
         }
         return actionLogger;
     }

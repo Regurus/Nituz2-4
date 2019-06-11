@@ -1,20 +1,20 @@
 package Model;
-import java.sql.*;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import static Controller.UsersController.UsersControllerInstance;
 
-public class UsersDatabase extends Database {
-
-    public UsersDatabase(){
+public class AdminDatabase extends Database {
+    /*public UsersDatabase(){
         super();
         this.tableName = "users_table";
         String sql = "CREATE TABLE IF NOT EXISTS users_table (\n"
                 + "	username text PRIMARY KEY,\n"
-                + "	password text NOT NULL,\n"
                 + "	name text NOT NULL,\n"
-                + "	rank text NOT NULL,\n"
-                + "	status text NOT NULL,\n"
+                + "	password text NOT NULL,\n"
                 + "	type text NOT NULL\n"
                 + ");";
         try{
@@ -68,7 +68,7 @@ public class UsersDatabase extends Database {
             while (rs.next()) {
                 res.add(new Policeman(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
+                        rs.getString("status"), rs.getString("type"), UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase())));
             }
         }
         catch (SQLException e ) {
@@ -85,7 +85,7 @@ public class UsersDatabase extends Database {
             while (rs.next()) {
                 res.add(new Fireman(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
+                        rs.getString("status"), rs.getString("type"), UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase())));
 
 
             }
@@ -104,7 +104,7 @@ public class UsersDatabase extends Database {
             while (rs.next()) {
                 res.add(new Dispatcher(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
+                        rs.getString("status"), rs.getString("type"), UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase())));
             }
         }
         catch (SQLException e ) {
@@ -122,7 +122,7 @@ public class UsersDatabase extends Database {
             while (rs.next()) {
                 res.add(new EmergencyMedicalTechnician(rs.getString("username"), rs.getString("password"),
                         rs.getString("name"), rs.getString("rank"),
-                        rs.getString("status"), rs.getString("type")));
+                        rs.getString("status"), rs.getString("type"), UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase())));
             }
         }
         catch (SQLException e ) {
@@ -130,7 +130,7 @@ public class UsersDatabase extends Database {
         }
         return res;
     }
-    
+
     private User parseResultSet(ResultSet rs){
         boolean exists;
         try {
@@ -147,19 +147,19 @@ public class UsersDatabase extends Database {
                     rs.getString("status"), rs.getString("type")};
             if(user[5].equals("Policeman"))
             {
-                return new Policeman(user[0],user[1],user[2], user[3],user[4],user[5]);
+                return new Policeman(user[0],user[1],user[2], user[3],user[4],user[5], UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase()));
             }
             if(user[5].equals("Fireman"))
             {
-                return new Fireman(user[0],user[1],user[2], user[3],user[4],user[5]);
+                return new Fireman(user[0],user[1],user[2], user[3],user[4],user[5], UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase()));
             }
             if(user[5].equals("Dispatcher"))
             {
-                return new Dispatcher(user[0],user[1],user[2], user[3],user[4],user[5]);
+                return new Dispatcher(user[0],user[1],user[2], user[3],user[4],user[5], UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase()));
             }
             if(user[5].equals("EmergencyMedicalTechnician"))
             {
-                return new EmergencyMedicalTechnician(user[0],user[1],user[2], user[3],user[4],user[5]);
+                return new EmergencyMedicalTechnician(user[0],user[1],user[2], user[3],user[4],user[5], UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase()));
             }
 
         }
@@ -168,6 +168,6 @@ public class UsersDatabase extends Database {
         }
         System.out.println("no users from type !");
         return null;
-    }
+    }*/
 
 }

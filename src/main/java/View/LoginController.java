@@ -11,7 +11,7 @@ import static Controller.UsersController.UsersControllerInstance;
 
 
 public class LoginController extends windowController {
-    public static UsersController usersController = UsersControllerInstance(new UsersDatabase(),new ComplaintDatabase());
+    public static UsersController usersController = UsersControllerInstance();
     @FXML
     private TextField username;
     @FXML

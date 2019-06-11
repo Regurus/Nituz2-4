@@ -13,15 +13,16 @@ public class EASystem {
         }
     }
 
-    public static EASystem eaSystemInstance(CategoriesDatabase categoriesDB) {
+    public static EASystem eaSystemInstance() {
         if(eaSystem == null)
         {
-            eaSystem = new EASystem(categoriesDB);
+            eaSystem = new EASystem(new CategoriesDatabase());
         }
         return eaSystem;
     }
 
     public boolean createNewCategory(String category){
+
         return true;
     }//TODO
 

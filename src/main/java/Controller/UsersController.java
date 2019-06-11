@@ -31,9 +31,9 @@ public class UsersController{
         }
     }
 
-    public static UsersController UsersControllerInstance(UsersDatabase usersDB ,ComplaintDatabase complaintDB) {
+    public static UsersController UsersControllerInstance() {
         if (usersController == null)
-            usersController = new UsersController(usersDB ,complaintDB);
+            usersController = new UsersController(new UsersDatabase() ,new ComplaintDatabase());
         return usersController;
     }
 
@@ -57,6 +57,8 @@ public class UsersController{
     public boolean approveLogIn(String login,String password){
         User account = usersDB.getByUsername(login);
         if(account==null){
+
+
             return false;
         }
         return account.getPassword().equals(password);

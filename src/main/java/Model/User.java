@@ -16,14 +16,13 @@ public abstract class User extends Observable {
     private UsersController usersController;
 
 
-    public User(String userName, String password, String name,String rank, String status,String type, UsersController usersController) {
+    public User(String userName, String password, String name,String rank, String status,String type) {
         this.userName = userName;
         this.password = password;
         this.name = name;
         this.rank = rank;
         this.status=status;
         this.type=type;
-        this.usersController=usersController;
     }
 
 
