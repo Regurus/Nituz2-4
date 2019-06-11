@@ -124,7 +124,12 @@ public class UsersController{
             return;
         Warning warning = new Warning(complaintId,usernameDest);
         warningDB.createWarning(warning);
-        
+        if (warningDB.checkIf3WarningsAndDeleteThem(usernameDest)){
+            User userLower=usersDB.getByUsername(usernameDest);
+            //if lowRank() then user become inactive
+           // if(userLower.lowRank())
+               // userLower.
+        }
 
     }
 
