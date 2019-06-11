@@ -34,7 +34,7 @@ public class Main extends Application {
         /*ComplaintDatabase cd = new ComplaintDatabase();
         System.out.println(cd.getLastIndex());
 
-        Warning w = new Warning(1,"test", 1);
+        /*Warning w = new Warning(1,"test", 1);
         WarningDatabase wd = new WarningDatabase();
         wd.createWarning(w);
         Warning wa = wd.getWarningByField("id", "1");*/

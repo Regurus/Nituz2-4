@@ -1,22 +1,29 @@
 package View;
 
 import Controller.EASystem;
-import Controller.UsersController;
+import Model.AdminUser;
 import Model.Complaint;
+import Model.User;
+import Controller.UsersController;
+
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
-import javafx.stage.WindowEvent;
+import javafx.scene.paint.Color;
+
+
 
 public class MainUIController extends windowController {
     private int depressedBtn = 4;
     public static Complaint selected;
+    public static String currentUser;
     //<editor-fold desc="Icons">
 
     @FXML
@@ -61,6 +68,10 @@ public class MainUIController extends windowController {
     //<editor-fold desc="Admin Screen">
     @FXML
     private ListView adm_scr_cpl_list;
+    @FXML
+    private TextField adm_new_cat;
+    @FXML
+    private Label adm_new_cat_err;
     //</editor-fold>
 
     //<editor-fold desc="User Screen">
@@ -92,12 +103,28 @@ public class MainUIController extends windowController {
         adm_scr_cpl_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
     private void init_user(){
-        this.username.setText("Test User");
-        this.division.setText("QA :(");
-        this.name.setText("Developer");
-        this.rank.setText("Generalisimus");
-        this.status.setText("Active");
-        this.perm_lvl.setText("Admin");
+        /*f(UsersController.UsersControllerInstance()!=null){
+            User active = UsersController.UsersControllerInstance().getUserByUsername(MainUIController.currentUser);
+            this.username.setText(active.getUserName());
+            this.division.setText(active.getType());
+            this.name.setText(active.getName());
+            this.rank.setText(active.getRank());
+            this.status.setText(active.getStatus());
+            this.perm_lvl.setText("User");
+        }
+        else{
+            AdminUser admin =  EASystem.eaSystemInstance().getAdmin();
+            this.username.setText(admin.getUserName());
+            this.division.setText(admin.getDivision());
+            this.name.setText(admin.getName());
+            this.rank.setText("N/A");
+            this.status.setText("Active");
+            this.perm_lvl.setText("Admin");
+        }*/
+
+
+
+
     }
     @FXML
     private void openAdmComplaintDialog(MouseEvent mouseEvent){
@@ -185,4 +212,19 @@ public class MainUIController extends windowController {
     private void test(MouseEvent event){
         System.out.println(event.getClickCount());
     }
+    @FXML
+    private void createCategory(){
+        String catValue = adm_new_cat.getText();
+        EASystem controller = EASystem.eaSystemInstance();
+        boolean result = controller.createNewCategory(catValue);
+        if(!result){
+            adm_new_cat_err.setTextFill(Color.RED);
+            adm_new_cat_err.setText(catValue+": Category Exist!");
+        }
+        else{
+            adm_new_cat_err.setTextFill(Color.GREEN);
+            adm_new_cat_err.setText(catValue+": OK!");
+        }
+    }
 }
+
