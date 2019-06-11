@@ -25,9 +25,11 @@ public class EASystem {
     }
 
     public boolean createNewCategory(String category){
-
+        if (categoriesDB.isExist(category))
+            return false;
+        categoriesDB.createCategory(category);
         return true;
-    }//TODO
+    }
 
     public void setAdmin(AdminUser admin){
         this.admin = admin;

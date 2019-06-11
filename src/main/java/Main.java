@@ -1,10 +1,7 @@
 
 
 import Controller.UsersController;
-import Model.Complaint;
-import Model.ComplaintDatabase;
-import Model.Warning;
-import Model.WarningDatabase;
+import Model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,11 +27,11 @@ public class Main extends Application {
 
     }
     public static void main(String[] args) {
-        launch(args);
+        //launch(args);
 
+        CategoriesDatabase cd = new CategoriesDatabase();
 
-
-
+        System.out.println(cd.isExist("dfvgfv"));
         /*ComplaintDatabase cd = new ComplaintDatabase();
         System.out.println(cd.getLastIndex());
 

@@ -1,22 +1,12 @@
 package Model;
 
 public class Warning {
-    private int id;
     private String destination;
     private int complaintID;
 
-    public Warning(int id, String destination, int complaintID) {
-        this.id = id;
-        this.destination = destination;
+    public Warning(int complaintID, String destination) {
         this.complaintID = complaintID;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.destination = destination;
     }
 
     public String getDestination() {

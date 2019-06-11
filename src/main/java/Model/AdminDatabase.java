@@ -3,9 +3,6 @@ package Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-
-import static Controller.UsersController.UsersControllerInstance;
 
 public class AdminDatabase extends Database {
     public AdminDatabase(){
