@@ -19,6 +19,22 @@ public class AdminUser implements Observer {
         this.division = division;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
     @Override
     public void update(Observable o, Object arg) {
 

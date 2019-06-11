@@ -1,4 +1,5 @@
 package Controller;
+import Model.AdminUser;
 import Model.CategoriesDatabase;
 import Model.Category;
 import Model.Complaint;
@@ -6,6 +7,8 @@ import Model.Complaint;
 public class EASystem {
     private static EASystem eaSystem = null;
     private CategoriesDatabase categoriesDB;
+    private AdminUser admin;
+
 
     private EASystem(CategoriesDatabase categoriesDB) {
         if(eaSystem == null){
@@ -26,7 +29,13 @@ public class EASystem {
         return true;
     }//TODO
 
+    public void setAdmin(AdminUser admin){
+        this.admin = admin;
+    }
 
+    public AdminUser getAdmin(){
+        return this.admin;
+    }
 
 
 }
