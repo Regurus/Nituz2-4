@@ -3,6 +3,8 @@ package Model;
 
 import Controller.UsersController;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Observable;
 
 
@@ -40,10 +42,12 @@ public abstract class User extends Observable {
                 ", type='" + type + '\'' ;
     }
 
-    public void createComplaint( String destination, String description,String date){
-        Complaint complaint = new Complaint(usersController.getAvailableComplaintID(),this.userName, destination, description, date, "pending",this.type );
-        usersController.incrementComplaintID();
-        usersController.addComplaint(complaint);
+    public void createComplaint( int complaintID,String destination, String description){
+//        Complaint complaint = new Complaint(usersController.getAvailableComplaintID(),this.userName, destination, description, date, "pending",this.type );
+//        usersController.incrementComplaintID();
+//        usersController.addComplaint(complaint);
+
+        Complaint complaint = new Complaint(complaintID,name,destination,description,getDateAndTime(),"pending",type);
         setChanged();
         notifyObservers(complaint);
 
@@ -113,6 +117,15 @@ public abstract class User extends Observable {
             status = "inactive";
             return false;
         }
+
     }
+
+
+    private String getDateAndTime(){
+        Date currentDate = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss.SSS");
+        return formatter.format(currentDate);
+    }
+
 
 }

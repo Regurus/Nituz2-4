@@ -5,7 +5,7 @@ import Controller.EASystem;
 import java.util.Observable;
 import java.util.Observer;
 
-public class AdminUser implements Observer {
+public class AdminUser  {
     private String username;
     private String name;
     private String password;
@@ -35,8 +35,4 @@ public class AdminUser implements Observer {
         return division;
     }
 
-    @Override
-    public void update(Observable o, Object arg) {
-
-    }
 }
