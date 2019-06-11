@@ -97,12 +97,8 @@ public class MainUIController extends windowController {
     public void initialize() {
         this.updateMenu(this.depressedBtn);
         search_scr.toFront();
-        this.init_cpl();
         this.init_adm();
         this.init_user();
-    }
-    private void init_cpl(){
-        this.compl_department.getItems().addAll("Fire Department","Police Department","Medical Department","Dispatcher");
     }
     private void init_adm(){
         if(!this.isAdmin){
@@ -233,7 +229,7 @@ public class MainUIController extends windowController {
         UsersController sys =UsersController.UsersControllerInstance();
         boolean res = sys.createNewComplaint(this.compl_username.getText(),this.compl_msg.getText());
         if(!res){
-            this.compl_err_msg.setText(this.compl_err_msg.getText()+"User does not exist\n");
+            this.compl_err_msg.setText(this.compl_err_msg.getText()+"Creation Error!!!\n");
             return;
         }
         this.compl_err_msg.setTextFill(Color.GREEN);
