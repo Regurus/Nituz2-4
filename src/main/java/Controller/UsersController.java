@@ -107,12 +107,18 @@ public class UsersController{
         }
     }
 
-    public void removeComplaint(int complaintId)
+    /**
+     * if the admin is not approving the complaint we'll call this func
+     * change the complaint status to "no"
+     * @param complaintId
+     */
+    public void declineComplaint(int complaintId)
     {
-        complaintDB.deleteByID(complaintId);
+        complaintDB.editConfirmation("no", complaintId);
     }
 
     public void createNewWarning(String usernameDest, int complaintId){
+        
 
     }//TODO
 
