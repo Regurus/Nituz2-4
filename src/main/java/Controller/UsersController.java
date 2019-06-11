@@ -83,7 +83,7 @@ public class UsersController{
 
         this.loginUser = account;
         return true;
-    }//TODO check admin!
+    }
 
     public User getUserByUsername(String username){
         return null;
