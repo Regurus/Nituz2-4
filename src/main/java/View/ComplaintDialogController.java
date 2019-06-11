@@ -2,9 +2,14 @@ package View;
 
 
 import Model.Complaint;
+import Controller.UsersController;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+
+import java.io.IOException;
 
 public class ComplaintDialogController extends windowController{
     @FXML
@@ -15,19 +20,31 @@ public class ComplaintDialogController extends windowController{
     private Label date;
     @FXML
     private TextArea descr;
+    private Complaint complaint;
     public void initialize(){
-        Complaint active = MainUIController.selected;
-        this.from.setText("From: "+active.getSource());
-        this.about.setText("About: "+active.getDestination());
-        this.date.setText("Date: "+active.getDate());
-        this.descr.setText(active.getDescription());
+        FXMLLoader loader = null;
+        try {
+            loader = new FXMLLoader(getClass().getClassLoader().getResource("MainUI.fxml"));
+            Parent root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MainUIController controller = loader.getController();
+        this.complaint = controller.getSelectedComplaint();
+        this.from.setText("From: "+this.complaint.getSource());
+        this.about.setText("About: "+this.complaint.getDestination());
+        this.date.setText("Date: "+this.complaint.getDate());
+        this.descr.setText(this.complaint.getDescription());
     }
+
     @FXML
     private void acceptComplaint(){
+        UsersController.UsersControllerInstance().createNewWarning(this.complaint.getDestination(),this.complaint.getId());
         System.out.println("Accepted");
     }
     @FXML
     private void rejectComplaint(){
+        UsersController.UsersControllerInstance().removeComplaint(this.complaint.getId());
         System.out.println("Rejected");
     }
 }

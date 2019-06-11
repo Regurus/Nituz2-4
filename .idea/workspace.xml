@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6eb63ddc-046f-47c8-8315-3b8e50b2e648" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/ComplaintDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/ComplaintDialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/MainUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/MainUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/MainUIController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,24 +41,24 @@
     <session id="732494418">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1030" />
-          <entry key="txt" value="17" />
+          <entry key="java" value="1871" />
+          <entry key="txt" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1030" />
-          <entry key="PLAIN_TEXT" value="17" />
+          <entry key="JAVA" value="1871" />
+          <entry key="PLAIN_TEXT" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="6" />
+          <entry key="java" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="6" />
+          <entry key="JAVA" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -83,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+            <state relative-caret-position="84">
+              <caret line="24" column="77" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,24 +110,56 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/MainUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="121" column="42" lean-forward="true" selection-start-line="121" selection-start-column="42" selection-end-line="121" selection-end-column="42" />
+            <state relative-caret-position="169">
+              <caret line="152" column="8" lean-forward="true" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#634#662#0" />
                 <element signature="e#961#991#0" />
                 <element signature="n#!!doc;n#compl_username#0;n#MainUIController#0" />
                 <element signature="method#init_cpl#0;class#MainUIController#0" />
-                <element signature="method#init_adm#0;class#MainUIController#0" />
                 <element signature="method#handleMenuClick#0;class#MainUIController#0" />
                 <element signature="method#setFill#0;class#MainUIController#0" />
                 <element signature="method#updateMenu#0;class#MainUIController#0" />
-                <element signature="method#sendComplaint#0;class#MainUIController#0" />
-                <element signature="e#6320#6321#0" expanded="true" />
-                <element signature="e#6377#6378#0" expanded="true" />
+                <element signature="e#6952#6953#0" expanded="true" />
+                <element signature="e#7009#7010#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/View/ComplaintDialogController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="46" column="89" selection-start-line="46" selection-start-column="89" selection-end-line="46" selection-end-column="89" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UsersController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-479">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1590#1591#0" expanded="true" />
+                <element signature="e#1624#1625#0" expanded="true" />
+                <element signature="e#1665#1666#0" expanded="true" />
+                <element signature="e#1694#1695#0" expanded="true" />
+                <element signature="e#2482#2483#0" expanded="true" />
+                <element signature="e#2509#2510#0" expanded="true" />
+                <element signature="e#2557#2558#0" expanded="true" />
+                <element signature="e#2584#2585#0" expanded="true" />
+                <element signature="e#3163#3164#0" expanded="true" />
+                <element signature="e#3194#3195#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,36 +177,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EASystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="26" column="11" lean-forward="true" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+            <state relative-caret-position="357">
+              <caret line="26" column="36" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UsersController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="38" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1357#1358#0" expanded="true" />
-                <element signature="e#1391#1392#0" expanded="true" />
-                <element signature="e#1432#1433#0" expanded="true" />
-                <element signature="e#1461#1462#0" expanded="true" />
-                <element signature="e#1872#1873#0" expanded="true" />
-                <element signature="e#1899#1900#0" expanded="true" />
-                <element signature="e#1947#1948#0" expanded="true" />
-                <element signature="e#1974#1975#0" expanded="true" />
-                <element signature="e#2565#2566#0" expanded="true" />
-                <element signature="e#2598#2599#0" expanded="true" />
-                <element signature="e#2643#2644#0" expanded="true" />
-                <element signature="e#2676#2677#0" expanded="true" />
-                <element signature="e#2719#2720#0" expanded="true" />
-                <element signature="e#2754#2755#0" expanded="true" />
+                <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#776#777#0" expanded="true" />
+                <element signature="e#810#811#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,16 +205,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ComplaintDialog.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -228,6 +227,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/AdminUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/MainUIController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/View/ComplaintDialogController.java" />
       </list>
     </option>
   </component>
@@ -331,31 +331,15 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/database.db</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controller/EASystem.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controller/UsersController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Main.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/ActionLogger.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/AdminDatabase.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/AdminUser.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/Dispatcher.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/EmergencyMedicalTechnician.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/Fireman.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/Policeman.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/User.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/View/LoginController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Controller/EASystem.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/Category.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Controller/UsersController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Model/AdminUser.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Model/Dispatcher.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Model/EmergencyMedicalTechnician.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Model/Fireman.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Model/Policeman.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Model/User.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Model/UsersDatabase.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/View/LoginController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/View/MainUIController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/View/windowController.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/Model/Category.class</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -363,7 +347,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Model/AdminDatabase.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -371,6 +354,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controller/LoginInteraction.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -493,7 +477,7 @@
       <workItem from="1559751678949" duration="24000" />
       <workItem from="1559751771197" duration="1273000" />
       <workItem from="1559812697470" duration="8078000" />
-      <workItem from="1560267935497" duration="6830000" />
+      <workItem from="1560267935497" duration="9651000" />
     </task>
     <task id="LOCAL-00001" summary="14:54">
       <created>1560081270947</created>
@@ -572,17 +556,24 @@
       <option name="project" value="LOCAL" />
       <updated>1560097247204</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ui semi connected to control">
+      <created>1560275618708</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560275618708</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8790000" />
+    <option name="totallyTimeSpent" value="11611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881518" visible="true" weight="0.16897655" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49881518" visible="true" weight="0.16897655" />
       <window_info id="Structure" order="1" sideWeight="0.5011848" side_tool="true" weight="0.1673774" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -591,16 +582,16 @@
       <window_info id="Favorites" order="6" sideWeight="0.5011848" side_tool="true" weight="0.1673774" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" visible="true" weight="0.39696312" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49520257" visible="true" weight="0.39696312" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6724832" weight="0.29929078" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5042644" side_tool="true" visible="true" weight="0.39696312" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50479746" side_tool="true" visible="true" weight="0.39696312" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4978678" weight="0.0845987" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4968017" weight="0.3286334" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49573562" weight="0.3286334" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -658,7 +649,8 @@
     <MESSAGE value="17:16" />
     <MESSAGE value="17:30&#10;singleton" />
     <MESSAGE value="user screen added" />
-    <option name="LAST_COMMIT_MESSAGE" value="user screen added" />
+    <MESSAGE value="ui semi connected to control" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui semi connected to control" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -668,6 +660,12 @@
           <line>116</line>
           <properties />
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/View/MainUIController.java</url>
+          <line>212</line>
+          <properties />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -776,16 +774,47 @@
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Policeman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="60" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Login.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/AdminUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EASystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="24" column="77" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -799,81 +828,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Policeman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UsersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#1432#1433#0" expanded="true" />
-            <element signature="e#1461#1462#0" expanded="true" />
-            <element signature="e#1872#1873#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1947#1948#0" expanded="true" />
-            <element signature="e#1974#1975#0" expanded="true" />
-            <element signature="e#2565#2566#0" expanded="true" />
-            <element signature="e#2598#2599#0" expanded="true" />
-            <element signature="e#2643#2644#0" expanded="true" />
-            <element signature="e#2676#2677#0" expanded="true" />
-            <element signature="e#2719#2720#0" expanded="true" />
-            <element signature="e#2754#2755#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EASystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="11" lean-forward="true" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/AdminUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="126">
+          <caret line="6" column="60" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/MainUIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="121" column="42" lean-forward="true" selection-start-line="121" selection-start-column="42" selection-end-line="121" selection-end-column="42" />
+        <state relative-caret-position="169">
+          <caret line="152" column="8" lean-forward="true" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#634#662#0" />
             <element signature="e#961#991#0" />
             <element signature="n#!!doc;n#compl_username#0;n#MainUIController#0" />
             <element signature="method#init_cpl#0;class#MainUIController#0" />
-            <element signature="method#init_adm#0;class#MainUIController#0" />
             <element signature="method#handleMenuClick#0;class#MainUIController#0" />
             <element signature="method#setFill#0;class#MainUIController#0" />
             <element signature="method#updateMenu#0;class#MainUIController#0" />
-            <element signature="method#sendComplaint#0;class#MainUIController#0" />
-            <element signature="e#6320#6321#0" expanded="true" />
-            <element signature="e#6377#6378#0" expanded="true" />
+            <element signature="e#6952#6953#0" expanded="true" />
+            <element signature="e#7009#7010#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UsersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-479">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1590#1591#0" expanded="true" />
+            <element signature="e#1624#1625#0" expanded="true" />
+            <element signature="e#1665#1666#0" expanded="true" />
+            <element signature="e#1694#1695#0" expanded="true" />
+            <element signature="e#2482#2483#0" expanded="true" />
+            <element signature="e#2509#2510#0" expanded="true" />
+            <element signature="e#2557#2558#0" expanded="true" />
+            <element signature="e#2584#2585#0" expanded="true" />
+            <element signature="e#3163#3164#0" expanded="true" />
+            <element signature="e#3194#3195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/ComplaintDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="46" column="89" selection-start-line="46" selection-start-column="89" selection-end-line="46" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
