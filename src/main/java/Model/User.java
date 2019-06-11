@@ -103,4 +103,9 @@ public abstract class User extends Observable {
         this.rank = rank;
     }
 
+    public void lowRank(){
+        if(Integer.valueOf(this.rank) > 1)
+            this.rank = String.valueOf(Integer.valueOf(this.rank)-1);
+    }
+
 }
