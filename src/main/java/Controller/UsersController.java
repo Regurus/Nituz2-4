@@ -104,10 +104,13 @@ public class UsersController implements Observer {
      */
     public boolean createNewComplaint(String destination, String description) {
         if (loginUser != null) {
-            if (usersDB.getByUsername(loginUser.getUserName()).getType().equals(usersDB.getByUsername(destination).getType()) && usersDB.getByUsername(destination).getStatus().equals("active")) {
-                loginUser.createComplaint(complaintID, destination, description);
-                complaintID++;
-                return true;
+            User dest = usersDB.getByUsername(destination);
+            if(dest!= null){
+                if (loginUser.getType().equals(dest.getType()) && dest.getStatus().equals("active")) {
+                    loginUser.createComplaint(complaintID, destination, description);
+                    complaintID++;
+                    return true;
+                }
             }
         }
         return false;
