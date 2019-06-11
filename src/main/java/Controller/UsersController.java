@@ -24,6 +24,7 @@ public class UsersController implements Observer {
     private static int complaintID ;
     private User loginUser;
     private EASystem system;
+    private ActionLogger actionLogger;
 
 
 
@@ -40,6 +41,7 @@ public class UsersController implements Observer {
             this.firemen = usersDB.getAllFiremen();
             this.system = EASystem.eaSystemInstance();
             complaintID= complaintDB.getLastIndex()+1;
+            this.actionLogger = ActionLogger.actionLoggerInstance();
         }
     }
 
@@ -112,29 +114,8 @@ public class UsersController implements Observer {
     }
 
 
-    /**
-     * if the admin is not approving the complaint we'll call this func
-     * change the complaint status to "no"
-     * @param complaintId
-     */
-    public void declineComplaint(int complaintId)
-    {
-        complaintDB.editConfirmation("no", complaintId);
-    }
 
-    public void createNewWarning(String usernameDest, int complaintId){
-        if(usernameDest.equals(""))
-            return;
-        Warning warning = new Warning(complaintId,usernameDest);
-        warningDB.createWarning(warning);
-        if (warningDB.checkIf3WarningsAndDeleteThem(usernameDest)){
-            User userLower=usersDB.getByUsername(usernameDest);
-            //if lowRank() then user become inactive
-            if(userLower.lowRank())
-                usersDB.updateStatus(usernameDest,"inactive");
-        }
 
-    }
 
     public ArrayList<Complaint> getAllComplaints(String division){
         return complaintDB.getDivisionComplaints(division);
@@ -151,7 +132,9 @@ public class UsersController implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        complaintDB.createComplaint((Complaint) arg);
+        complaintDB.createComplaint((Complaint) arg );
+        Complaint complaint = (Complaint) arg;
+        actionLogger.writeToLog("Complaint created; " + complaint.toString());
     }
 
 }

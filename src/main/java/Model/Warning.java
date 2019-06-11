@@ -24,4 +24,8 @@ public class Warning {
     public void setComplaintID(int complaintID) {
         this.complaintID = complaintID;
     }
+
+    public String toString(){
+        return "Warning id: " + complaintID + ", about: " +  destination;
+    }
 }

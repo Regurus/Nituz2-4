@@ -62,4 +62,9 @@ public class Complaint {
     public void setConfirm(String confirm) {
         this.confirm = confirm;
     }
+
+    public String toString(){
+        return "Complaint id: " + id + ", made by: " + source + ", about: " + destination + ", date: " + date;
+    }
+
 }
