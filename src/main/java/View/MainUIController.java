@@ -97,8 +97,8 @@ public class MainUIController extends windowController {
     public void initialize() {
         this.updateMenu(this.depressedBtn);
         search_scr.toFront();
-        this.init_adm();
         this.init_user();
+        this.init_adm();
     }
     private void init_adm(){
         if(!this.isAdmin){
