@@ -28,6 +28,7 @@ public class MainUIController extends windowController {
     private int activeComplaint = -1;
     public static Complaint selected;
     public static String currentUser;
+
     //<editor-fold desc="Icons">
 
     @FXML
@@ -92,6 +93,7 @@ public class MainUIController extends windowController {
     @FXML
     private Label perm_lvl;
     //</editor-fold>
+
     public void initialize() {
         this.updateMenu(this.depressedBtn);
         search_scr.toFront();
@@ -118,7 +120,7 @@ public class MainUIController extends windowController {
         adm_scr_cpl_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
     private void init_user(){
-        if(UsersController.UsersControllerInstance()!=null){
+        if(UsersController.UsersControllerInstance().getLoginUser()!=null){
             this.isAdmin = false;
             User active = UsersController.UsersControllerInstance().getLoginUser();
             this.username.setText(active.getUserName());
@@ -210,7 +212,7 @@ public class MainUIController extends windowController {
         this.depressedBtn = newActiveButton;
     }
     @FXML
-    private void sendComplaint(){/*
+    private void sendComplaint(){
         this.compl_err_msg.setText("");
         this.compl_err_msg.setTextFill(Color.RED);
         boolean flag = false;
@@ -237,7 +239,6 @@ public class MainUIController extends windowController {
         this.compl_err_msg.setTextFill(Color.GREEN);
         this.compl_err_msg.setText("Done!");
         this.compl_msg.setText("");
-        this.compl_msg.setText("");*///TODO uncomment this
     }
     public void test(){
         System.out.println("TTTTTTT");
