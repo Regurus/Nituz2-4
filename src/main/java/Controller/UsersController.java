@@ -66,9 +66,11 @@ public class UsersController{
 
     }
 
+    public User getLoginUser() {
+        return loginUser;
+    }
 
-
-    public boolean approveLogIn(String login,String password){
+    public boolean approveLogIn(String login, String password){
         User account = usersDB.getByUsername(login);
         if(account==null){
             AdminUser admin = adminUserDB.getByUsernameAndPassword(login, password);
