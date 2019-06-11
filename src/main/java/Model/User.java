@@ -11,7 +11,7 @@ public abstract class User extends Observable {
     private String password;
     private String name;
     private String rank;
-    private String status;
+    private String status; //active/ inactive
     private String type;
     private UsersController usersController;
 
@@ -48,8 +48,6 @@ public abstract class User extends Observable {
         notifyObservers(complaint);
 
     }
-
-
 
     public boolean isLegal() {
         return true;
@@ -103,9 +101,18 @@ public abstract class User extends Observable {
         this.rank = rank;
     }
 
-    public void lowRank(){
-        if(Integer.valueOf(this.rank) > 1)
+    /**
+     * @return true if the rank lower now, else the user is now inactive!
+     */
+    public boolean lowRank(){
+        if(Integer.valueOf(this.rank) > 1){
             this.rank = String.valueOf(Integer.valueOf(this.rank)-1);
+            return true;
+        }
+        else{
+            status = "inactive";
+            return false;
+        }
     }
 
 }

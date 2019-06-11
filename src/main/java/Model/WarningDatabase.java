@@ -44,7 +44,32 @@ public class WarningDatabase extends Database {
         return w;
     }
 
+    public boolean checkIf3WarningsAndDeleteThem(String username){
+        String sql = "SELECT* FROM warning_table WHERE destination = ? ";
+        String[] args = {username};
+        ResultSet rs = this.executeGetStatement(sql,args);
+        int count = 0;
+        try{
+            while(rs.next())
+            {
+                count++;
+                if(count==3){
+                    removeWarnings(username);
+                    return true;
+                }
+            }
+        }
+        catch (SQLException e){
+            System.out.println("checkIf3WarningsAndDeleteThem error");
+        }
+        return false;
+    }
 
+    private void removeWarnings(String username){
+        String sql = "DELETE FROM warning_table WHERE destination = ?";
+        String[] args = {username};
+        this.executeGetStatement(sql,args);
+    }
 
 
 }
