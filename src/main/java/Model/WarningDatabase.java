@@ -10,9 +10,8 @@ public class WarningDatabase extends Database {
         super();
         this.tableName = "warning_table";
         String sql = "CREATE TABLE IF NOT EXISTS warning_table (\n"
-                + "	id text PRIMARY KEY,\n"
-                + "	destination text NOT NULL,\n"
-                + "	complaintID text NOT NULL\n"
+                + "	complaintID text NOT NULL,\n"
+                + "	destination text NOT NULL\n"
                 + ");";
         try{
             // create a new table
@@ -25,8 +24,8 @@ public class WarningDatabase extends Database {
     }
 
     public void createWarning(Warning warning){
-        String[] str = {String.valueOf(warning.getId()), warning.getDestination(), String.valueOf(warning.getComplaintID())};
-        String sql = "INSERT INTO warning_table (id,destination,complaintID) VALUES(?,?,?)";
+        String[] str = { String.valueOf(warning.getComplaintID()),String.valueOf(warning.getDestination())};
+        String sql = "INSERT INTO warning_table (complaintID,destination) VALUES(?,?)";
         this.executeUpdateStatement(sql,str);
     }
 
@@ -36,8 +35,8 @@ public class WarningDatabase extends Database {
         ResultSet rs = this.executeGetStatement(sql,args);
         Warning w = null;
         try{
-            w = new Warning(Integer.parseInt(rs.getString("id")), rs.getString("destination"),
-                    Integer.parseInt(rs.getString("complaintID")));
+            w = new Warning(Integer.parseInt(rs.getString("complaintID")),
+                    rs.getString("destination"));
         }
         catch (SQLException e){
             System.out.println("getWarningByUsername error");

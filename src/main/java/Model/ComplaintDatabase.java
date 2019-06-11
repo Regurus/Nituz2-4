@@ -120,7 +120,7 @@ public class ComplaintDatabase extends Database {
         String sql = "SELECT * " + "FROM complaint_table";
         String[] args = null;
         ResultSet rs = this.executeGetStatement(sql,args);
-        int last = 1;
+        int last = 0;
         try {
             while(rs.next()){
                 int cur = Integer.parseInt(rs.getString("id"));

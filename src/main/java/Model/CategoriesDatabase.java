@@ -1,7 +1,8 @@
 package Model;
 
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class CategoriesDatabase extends Database{
 
@@ -28,6 +29,21 @@ public class CategoriesDatabase extends Database{
         String sql = "INSERT INTO categories_table (name) VALUES(?)";
         String[] tuple={name};
         this.executeUpdateStatement(sql,tuple);
+    }
+
+    public boolean isExist(String name){
+        String sql = "SELECT* FROM categories_table WHERE name = ?";
+        String[] args = {name};
+        ResultSet rs = this.executeGetStatement(sql,args);
+        try{
+            if(!rs.next())
+                return false;
+        }
+        catch (SQLException e){
+            System.out.println("Category is Exist error");
+        }
+        return true;
+
     }
 
 
