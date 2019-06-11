@@ -54,13 +54,32 @@ public class UsersController{
 
 
 
-    public boolean combinationApprove(String login,String password){
+    public boolean approveLogIn(String login,String password){
         User account = usersDB.getByUsername(login);
         if(account==null){
             return false;
         }
         return account.getPassword().equals(password);
     }//TODO check admin!
+
+    public User getUserByUsername(String username){
+        return null;
+    }//TODO
+
+    public boolean createNewComplaint(){
+        return true;
+    }//TODO
+
+    public void removeComplaint(int coimplaintId){
+
+    }//TODO
+
+    public void createNewWarning(String usernameDest, int complaintId){
+
+    }//TODO
+
+    public ArrayList<Complaint> getAllComplaints(String division){return null;}//TODO
+
     public boolean passwordApprove(String password){
         //approves only passwords that include at least 1 number, 1 capital letter and one regular letter.
         return Pattern.matches("[0-9]", password) && Pattern.matches("[a-z]", password) && Pattern.matches("[A-Z]", password);
