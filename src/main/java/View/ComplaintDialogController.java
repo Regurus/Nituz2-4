@@ -2,13 +2,12 @@ package View;
 
 
 import Model.Complaint;
-import Controller.UsersController;
+import Controller.EASystem;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-
 import java.io.IOException;
 
 public class ComplaintDialogController extends windowController{
@@ -39,12 +38,12 @@ public class ComplaintDialogController extends windowController{
 
     @FXML
     private void acceptComplaint(){
-        UsersController.UsersControllerInstance().createNewWarning(this.complaint.getDestination(),this.complaint.getId());
+        EASystem.eaSystemInstance().createNewWarning(this.complaint.getDestination(),this.complaint.getId());
         System.out.println("Accepted");
     }
     @FXML
     private void rejectComplaint(){
-        UsersController.UsersControllerInstance().declineComplaint(this.complaint.getId());
+        EASystem.eaSystemInstance().declineComplaint(this.complaint.getId());
         System.out.println("Rejected");
     }
 }
