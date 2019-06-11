@@ -21,7 +21,6 @@ public class UsersController{
     private static UsersController usersController = null;
     private static int complaintID ;
     private User loginUser;
-    private String username;//should be updated to null on exit TODO
     private EASystem system;
 
 
@@ -79,9 +78,9 @@ public class UsersController{
             system.setAdmin(admin);
             return true;
         }
-        if(!account.getPassword().equals(password))
+        if(!account.getPassword().equals(password) || account.getStatus().equals("inactive"))
             return false;
-        username = account.getUserName();
+
         this.loginUser = account;
         return true;
     }//TODO check admin!
@@ -126,7 +125,12 @@ public class UsersController{
             return;
         Warning warning = new Warning(complaintId,usernameDest);
         warningDB.createWarning(warning);
-        
+        if (warningDB.checkIf3WarningsAndDeleteThem(usernameDest)){
+            User userLower=usersDB.getByUsername(usernameDest);
+            //if lowRank() then user become inactive
+            if(userLower.lowRank())
+                usersDB.updateStatus(usernameDest,"inactive");
+        }
 
     }
 
@@ -141,9 +145,6 @@ public class UsersController{
         return Pattern.matches("[0-9]", password) && Pattern.matches("[a-z]", password) && Pattern.matches("[A-Z]", password);
     }
 
-    public String getCurrentUsername(){
-        return username;
-    }
 
     private String getDateAndTime(){
         Date currentDate = new Date();
