@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class WarningDatabase extends Database {
 
     public WarningDatabase(){
-        super();
+        super("WarningDB");
         this.tableName = "warning_table";
         String sql = "CREATE TABLE IF NOT EXISTS warning_table (\n"
                 + "	complaintID text NOT NULL,\n"

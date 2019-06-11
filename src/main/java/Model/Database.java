@@ -8,8 +8,8 @@ public  abstract class Database {
     protected String name;
     protected String tableName;
 
-    public Database(){
-        this.name = "database.db";
+    public Database(String name){
+        this.name = name;
         File a = new File("src/main/resources/Database.db");
         File parentFolder = new File(a.getParent());
         deployDataBase(parentFolder.getParent(),name);

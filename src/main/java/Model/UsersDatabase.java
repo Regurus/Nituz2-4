@@ -7,7 +7,7 @@ import static Controller.UsersController.UsersControllerInstance;
 public class UsersDatabase extends Database {
 
     public UsersDatabase(){
-        super();
+        super("UsersDB");
         this.tableName = "users_table";
         String sql = "CREATE TABLE IF NOT EXISTS users_table (\n"
                 + "	username text PRIMARY KEY,\n"

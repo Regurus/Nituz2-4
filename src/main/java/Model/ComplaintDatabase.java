@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ComplaintDatabase extends Database {
 
     public ComplaintDatabase(){
-        super();
+        super("ComplaintDB");
         this.tableName = "complaint_table";
         String sql = "CREATE TABLE IF NOT EXISTS complaint_table (\n"
                 + "	id text PRIMARY KEY,\n"
