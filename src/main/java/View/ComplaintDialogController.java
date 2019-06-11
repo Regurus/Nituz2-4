@@ -44,7 +44,7 @@ public class ComplaintDialogController extends windowController{
     }
     @FXML
     private void rejectComplaint(){
-        UsersController.UsersControllerInstance().removeComplaint(this.complaint.getId());
+        UsersController.UsersControllerInstance().declineComplaint(this.complaint.getId());
         System.out.println("Rejected");
     }
 }
