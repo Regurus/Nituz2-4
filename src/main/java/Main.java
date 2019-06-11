@@ -2,6 +2,8 @@
 
 import Model.Complaint;
 import Model.ComplaintDatabase;
+import Model.Warning;
+import Model.WarningDatabase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,8 +29,14 @@ public class Main extends Application {
 
     }
     public static void main(String[] args) {
-        launch(args);
+        //launch(args);
+        /*ComplaintDatabase cd = new ComplaintDatabase();
+        System.out.println(cd.getLastIndex());*/
 
+        Warning w = new Warning(1,"test", 1);
+        WarningDatabase wd = new WarningDatabase();
+        wd.createWarning(w);
+        Warning wa = wd.getWarningByField("id", "1");
 
     }
 }
