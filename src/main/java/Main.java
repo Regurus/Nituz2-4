@@ -31,6 +31,10 @@ public class Main extends Application {
     }
     public static void main(String[] args) {
         launch(args);
+
+
+
+
         /*ComplaintDatabase cd = new ComplaintDatabase();
         System.out.println(cd.getLastIndex());
 
