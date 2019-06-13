@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6eb63ddc-046f-47c8-8315-3b8e50b2e648" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/AdminDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/AdminDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/CategoriesDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/CategoriesDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ComplaintDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ComplaintDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/WarningDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/WarningDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UsersDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UsersDB.db" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,13 +41,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="2013" />
-          <entry key="txt" value="192" />
+          <entry key="txt" value="211" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2013" />
-          <entry key="PLAIN_TEXT" value="192" />
+          <entry key="PLAIN_TEXT" value="211" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -135,8 +132,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/AdminDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="-357">
+              <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -295,7 +292,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560425172901" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560425676063" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -5159,7 +5156,7 @@
       <workItem from="1559812697470" duration="8078000" />
       <workItem from="1560267935497" duration="9651000" />
       <workItem from="1560279935461" duration="1605000" />
-      <workItem from="1560424827043" duration="292000" />
+      <workItem from="1560424827043" duration="890000" />
     </task>
     <task id="LOCAL-00001" summary="14:54">
       <created>1560081270947</created>
@@ -5294,15 +5291,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560287008388</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="db location + name fix">
+      <created>1560425203974</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1560425203974</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15269000" />
+    <option name="totallyTimeSpent" value="15867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881518" visible="true" weight="0.17377399" />
       <window_info id="Structure" order="1" sideWeight="0.5011848" side_tool="true" weight="0.1673774" />
@@ -5387,7 +5390,8 @@
     <MESSAGE value="ui fully connected" />
     <MESSAGE value="complaint creation patch" />
     <MESSAGE value="db fix transfer to db per table scheme" />
-    <option name="LAST_COMMIT_MESSAGE" value="db fix transfer to db per table scheme" />
+    <MESSAGE value="db location + name fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="db location + name fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -5596,8 +5600,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/AdminDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="-357">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
         </state>
       </provider>
     </entry>
