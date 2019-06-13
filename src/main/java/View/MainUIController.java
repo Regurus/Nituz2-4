@@ -15,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Paint;
 import javafx.scene.paint.Color;
 
@@ -26,11 +27,9 @@ public class MainUIController extends windowController {
     private int depressedBtn = 4;
     private boolean isAdmin = true;
     private int activeComplaint = -1;
-    public static Complaint selected;
     public static String currentUser;
 
     //<editor-fold desc="Icons">
-
     @FXML
     private FontAwesomeIconView personalInfo;
     @FXML
@@ -41,10 +40,17 @@ public class MainUIController extends windowController {
     private FontAwesomeIconView add;
     @FXML
     private FontAwesomeIconView search;
-
     //</editor-fold>
 
-    //<editor-fold desc="Screens">
+    //<editor-fold desc="Menu">
+    @FXML
+    private GridPane admin_blck;
+    @FXML
+    private GridPane createC_blck;
+    @FXML
+    private TilePane menu;
+    //</editor-fold>
+
 
     @FXML
     private GridPane search_scr;
@@ -98,6 +104,12 @@ public class MainUIController extends windowController {
         this.updateMenu(this.depressedBtn);
         search_scr.toFront();
         this.init_user();
+        if(!this.isAdmin){
+            this.menu.getChildren().remove(this.createC_blck);
+        }
+        else{
+            this.menu.getChildren().remove(this.admin_blck);
+        }
         this.init_adm();
     }
     private void init_adm(){

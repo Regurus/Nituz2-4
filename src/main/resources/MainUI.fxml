@@ -36,7 +36,7 @@
                 <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TilePane hgap="52.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TilePane fx:id="menu" hgap="85.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <GridPane fx:id="search_blck" prefHeight="18.0" prefWidth="0.0">
                           <columnConstraints>
