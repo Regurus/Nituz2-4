@@ -76,7 +76,7 @@ public class ComplaintDatabase extends Database {
     }
 
     public ArrayList<Complaint> getDivisionComplaints(String type){
-        String sql = "SELECT * FROM complaint_table WHERE type = ?";
+        String sql = "SELECT * FROM complaint_table WHERE type = ? AND confirm = 'pending'";
         String[] args = {type};
         ResultSet rs = this.executeGetStatement(sql,args);
         return parseResultSet(rs);
@@ -96,11 +96,11 @@ public class ComplaintDatabase extends Database {
         try {
             complaint.add(new Complaint(Integer.parseInt(rs.getString("id")), rs.getString("source"),
                     rs.getString("destination"), rs.getString("description"),
-                    rs.getString("confirm"), rs.getString("date"), rs.getString("type")));
+                    rs.getString("date"), rs.getString("confirm"), rs.getString("type")));
             while(rs.next()) {
                 complaint.add(new Complaint(Integer.parseInt(rs.getString("id")), rs.getString("source"),
                         rs.getString("destination"), rs.getString("description"),
-                        rs.getString("confirm"), rs.getString("date"), rs.getString("type")));
+                         rs.getString("date"), rs.getString("confirm"), rs.getString("type")));
             }
         }
         catch (SQLException e){

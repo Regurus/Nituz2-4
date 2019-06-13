@@ -40,10 +40,12 @@ public class ComplaintDialogController extends windowController{
     private void acceptComplaint(){
         EASystem.eaSystemInstance().createNewWarning(this.complaint.getDestination(),this.complaint.getId());
         System.out.println("Accepted");
+        this.close();
     }
     @FXML
     private void rejectComplaint(){
         EASystem.eaSystemInstance().declineComplaint(this.complaint.getId());
         System.out.println("Rejected");
+        this.close();
     }
 }

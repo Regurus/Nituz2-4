@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 public class MainUIController extends windowController {
     private int depressedBtn = 4;
     private boolean isAdmin = true;
-    private int activeComplaint = -1;
+    private static int activeComplaint = -1;
     public static String currentUser;
 
     //<editor-fold desc="Icons">
@@ -105,10 +105,10 @@ public class MainUIController extends windowController {
         search_scr.toFront();
         this.init_user();
         if(!this.isAdmin){
-            this.menu.getChildren().remove(this.createC_blck);
+            this.menu.getChildren().remove(this.admin_blck);
         }
         else{
-            this.menu.getChildren().remove(this.admin_blck);
+            this.menu.getChildren().remove(this.createC_blck);
         }
         this.init_adm();
     }
@@ -153,7 +153,7 @@ public class MainUIController extends windowController {
     private void openAdmComplaintDialog(MouseEvent mouseEvent){
         if(mouseEvent.getClickCount()==2){
             String selected = (String)((ListView)mouseEvent.getSource()).getSelectionModel().getSelectedItems().get(0);
-            this.activeComplaint = Integer.parseInt(selected.split(Pattern.quote(" :: "))[0]);
+            activeComplaint = Integer.parseInt(selected.split(Pattern.quote(" :: "))[0]);
             //get System instance
             //get Complaint Object
             //MainUIController.selected = new Complaint("me","you","f you","today");
@@ -163,7 +163,7 @@ public class MainUIController extends windowController {
     public Complaint getSelectedComplaint(){
         ArrayList<Complaint> list = UsersController.UsersControllerInstance().getAllComplaints(EASystem.eaSystemInstance().getAdmin().getDivision());
         for(Complaint c : list){
-            if(c.getId()==this.activeComplaint)
+            if(c.getId()==activeComplaint)
                 return c;
         }
         return null;
