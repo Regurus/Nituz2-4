@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class ActionLogger implements Logger{
-    private String path;
+    private String path = "log.txt";
     private static ActionLogger actionLogger = null;
 
     private ActionLogger()

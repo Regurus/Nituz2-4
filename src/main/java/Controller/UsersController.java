@@ -23,7 +23,6 @@ public class UsersController implements Observer {
     private static UsersController usersController = null;
     private static int complaintID ;
     private User loginUser;
-    private EASystem system;
     private ActionLogger actionLogger;
 
 
@@ -39,7 +38,6 @@ public class UsersController implements Observer {
             this.emergencyMedicalTechnicians = usersDB.getAllEmergencyMedicalTechnicians();
             this.policemen = usersDB.getAllPolicemen();
             this.firemen = usersDB.getAllFiremen();
-            this.system = EASystem.eaSystemInstance();
             complaintID= complaintDB.getLastIndex()+1;
             this.actionLogger = ActionLogger.actionLoggerInstance();
         }
@@ -79,7 +77,7 @@ public class UsersController implements Observer {
             AdminUser admin = adminUserDB.getByUsernameAndPassword(login, password);
             if(admin == null)
                 return false;
-            system.setAdmin(admin);
+            EASystem.eaSystemInstance().setAdmin(admin);
             return true;
         }
         if(!account.getPassword().equals(password) || account.getStatus().equals("inactive"))

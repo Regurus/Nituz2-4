@@ -51,6 +51,10 @@ public class MainUIController extends windowController {
     private TilePane menu;
     //</editor-fold>
 
+    @FXML
+    private Label usr_wrn_lbl;
+    @FXML
+    private ListView usr_wrn_list;
 
     @FXML
     private GridPane search_scr;
@@ -109,8 +113,11 @@ public class MainUIController extends windowController {
         }
         else{
             this.menu.getChildren().remove(this.createC_blck);
+            this.usr_wrn_list.setDisable(true);
+            this.usr_wrn_lbl.setText(" ");
         }
         this.init_adm();
+        this.init_warn();
     }
     private void init_adm(){
         if(!this.isAdmin){
@@ -148,6 +155,15 @@ public class MainUIController extends windowController {
             this.status.setText("Active");
             this.perm_lvl.setText("Admin");
         }
+    }
+    private void init_warn(){
+        ArrayList<Complaint> list = UsersController.UsersControllerInstance().getAllUserWarning();
+        ArrayList<String> values = new ArrayList<String>();
+        for(Complaint c: list){
+            values.add(c.getId()+" :: "+c.getDestination()+" :: "+c.getDescription());
+        }
+        this.usr_wrn_list.getItems().addAll(values.toArray());
+        adm_scr_cpl_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
     @FXML
     private void openAdmComplaintDialog(MouseEvent mouseEvent){

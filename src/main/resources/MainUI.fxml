@@ -219,6 +219,105 @@
                   </HBox>
                </children>
             </GridPane>
+            <GridPane fx:id="admin_scr" style="-fx-background-color: #FFFFFF;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="0.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="868.0" minWidth="10.0" prefWidth="859.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="9.0" prefWidth="20.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Accordion style="-fx-background-color: #EEEEEE; -fx-border-color: #AAAAAA;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <panes>
+                      <TitledPane animated="false" text="Create New Category">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="374.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="369.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="340.0" minHeight="10.0" prefHeight="280.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="adm_new_cat" prefHeight="40.0" prefWidth="332.0" promptText="Name the new Category" style="-fx-border-radius: 0;" />
+                                                <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="35.0" style="-fx-border-radius: 0;">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="PLUS" onMouseClicked="#createCategory" size="25" translateY="2.0" />
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label fx:id="adm_new_cat_err" textFill="RED" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Review Complaints">
+                           <content>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ListView fx:id="adm_scr_cpl_list" onMouseClicked="#openAdmComplaintDialog" prefHeight="466.0" prefWidth="807.0" style="-fx-background-color: #EEEEEE; -fx-border-color: #DDDDDD;" />
+                                 </children>
+                              </HBox>
+                           </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </GridPane>
+            <GridPane fx:id="complaint_scr" style="-fx-background-color: #FFFFFF;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE; -fx-border-color: #AAAAAA;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="321.0" layoutY="14.0" text="File a new Complaint">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="compl_msg" layoutX="93.0" layoutY="218.0" prefHeight="163.0" prefWidth="676.0" promptText="Short descrition." />
+                        <Button layoutX="389.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#sendComplaint" text="Confirm">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="compl_username" layoutX="93.0" layoutY="153.0" prefHeight="30.0" prefWidth="676.0" promptText="Username" />
+                        <VBox alignment="CENTER" layoutY="491.0" prefHeight="60.0" prefWidth="862.0">
+                           <children>
+                              <Label fx:id="compl_err_msg" textFill="#ff2121" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
             <GridPane fx:id="user_scr" style="-fx-background-color: #FFFFFF;">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
@@ -231,7 +330,7 @@
                   <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE; -fx-border-color: #AAAAAA;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="500.0">
                           <columnConstraints>
@@ -446,114 +545,25 @@
                                     </GridPane>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
                                  <children>
                                     <Label text="Editing is currently NOT permitted" textFill="#eb0909" />
                                  </children>
                               </HBox>
-                           </children>
-                        </GridPane>
-                     </children>
-                  </HBox>
-               </children>
-            </GridPane>
-            <GridPane fx:id="admin_scr" style="-fx-background-color: #FFFFFF;">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="0.0" prefWidth="20.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="868.0" minWidth="10.0" prefWidth="859.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="9.0" prefWidth="20.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Accordion style="-fx-background-color: #EEEEEE; -fx-border-color: #AAAAAA;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <panes>
-                      <TitledPane animated="false" text="Create New Category">
-                           <content>
-                              <GridPane>
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="374.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="369.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="340.0" minHeight="10.0" prefHeight="280.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                       <children>
-                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                                             <children>
-                                                <TextField fx:id="adm_new_cat" prefHeight="40.0" prefWidth="332.0" promptText="Name the new Category" style="-fx-border-radius: 0;" />
-                                                <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="35.0" style="-fx-border-radius: 0;">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="PLUS" onMouseClicked="#createCategory" size="25" translateY="2.0" />
-                                                   </graphic>
-                                                </Button>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                       <children>
-                                          <Label fx:id="adm_new_cat_err" textFill="RED" />
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </GridPane>
-                           </content>
-                      </TitledPane>
-                      <TitledPane animated="false" text="Review Complaints">
-                           <content>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <ListView fx:id="adm_scr_cpl_list" onMouseClicked="#openAdmComplaintDialog" prefHeight="466.0" prefWidth="807.0" style="-fx-background-color: #EEEEEE; -fx-border-color: #DDDDDD;" />
+                                    <Label fx:id="usr_wrn_lbl" text="Active Warnings" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </HBox>
-                           </content>
-                      </TitledPane>
-                    </panes>
-                  </Accordion>
-               </children>
-            </GridPane>
-            <GridPane fx:id="complaint_scr" style="-fx-background-color: #FFFFFF;">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE; -fx-border-color: #AAAAAA;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <children>
-                        <Label layoutX="321.0" layoutY="14.0" text="File a new Complaint">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <TextArea fx:id="compl_msg" layoutX="93.0" layoutY="218.0" prefHeight="163.0" prefWidth="676.0" promptText="Short descrition." />
-                        <Button layoutX="389.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#sendComplaint" text="Confirm">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Button>
-                        <TextField fx:id="compl_username" layoutX="93.0" layoutY="153.0" prefHeight="30.0" prefWidth="676.0" promptText="Username" />
-                        <VBox alignment="CENTER" layoutY="491.0" prefHeight="60.0" prefWidth="862.0">
-                           <children>
-                              <Label fx:id="compl_err_msg" textFill="#ff2121" />
                            </children>
-                        </VBox>
+                        </GridPane>
+                        <ListView fx:id="usr_wrn_list" prefHeight="200.0" prefWidth="200.0" />
                      </children>
-                  </AnchorPane>
+                  </VBox>
                </children>
             </GridPane>
          </children>
