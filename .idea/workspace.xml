@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6eb63ddc-046f-47c8-8315-3b8e50b2e648" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CategoriesDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CategoriesDB.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ComplaintDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ComplaintDB.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ActionLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ActionLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UsersController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,26 +41,26 @@
     <session id="732494418">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2385" />
-          <entry key="txt" value="243" />
+          <entry key="java" value="2410" />
+          <entry key="txt" value="262" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2385" />
-          <entry key="PLAIN_TEXT" value="243" />
+          <entry key="JAVA" value="2410" />
+          <entry key="PLAIN_TEXT" value="262" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="25" />
-          <entry key="txt" value="1" />
+          <entry key="java" value="26" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="25" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JAVA" value="26" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -81,10 +78,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/MainUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
+            <state relative-caret-position="384">
               <caret line="159" column="97" selection-start-line="159" selection-start-column="97" selection-end-line="159" selection-end-column="97" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -153,17 +150,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UsersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="387">
+              <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#UsersController#0;class#UsersController#0" />
                 <element signature="method#UsersControllerInstance#0;class#UsersController#0" />
                 <element signature="method#addComplaint#0;class#UsersController#0" />
-                <element signature="method#approveLogIn#0;class#UsersController#0" />
                 <element signature="e#3077#3078#0" expanded="true" />
                 <element signature="e#3104#3105#0" expanded="true" />
               </folding>
@@ -172,22 +168,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/CategoriesDatabase.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EASystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="51">
+              <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/View/ComplaintDialogController.java">
+        <entry file="file://$PROJECT_DIR$/log.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="42">
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -207,6 +200,7 @@
     <findStrings>
       <find>getCu</find>
       <find>==2</find>
+      <find>actionLogger</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -216,7 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Controller/EASystem.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/EmergencyMedicalTechnician.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Policeman.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Fireman.java" />
@@ -227,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/UsersController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/UsersDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/CategoriesDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/AdminDatabase.java" />
@@ -236,6 +228,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/ActionLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/WarningDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/MainUIController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/EASystem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/UsersController.java" />
       </list>
     </option>
   </component>
@@ -323,7 +317,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560429629132" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560429944364" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -482,7 +476,7 @@
       <workItem from="1559812697470" duration="8078000" />
       <workItem from="1560267935497" duration="9651000" />
       <workItem from="1560279935461" duration="1605000" />
-      <workItem from="1560424827043" duration="4742000" />
+      <workItem from="1560424827043" duration="5080000" />
     </task>
     <task id="LOCAL-00001" summary="14:54">
       <created>1560081270947</created>
@@ -645,17 +639,24 @@
       <option name="project" value="LOCAL" />
       <updated>1560428043791</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Warnings displaying">
+      <created>1560429686074</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1560429686074</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19719000" />
+    <option name="totallyTimeSpent" value="20057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881518" visible="true" weight="0.17377399" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49881518" visible="true" weight="0.17377399" />
       <window_info id="Structure" order="1" sideWeight="0.5011848" side_tool="true" weight="0.1673774" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -664,7 +665,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5011848" side_tool="true" weight="0.1673774" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64179105" visible="true" weight="0.335141" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64179105" visible="true" weight="0.335141" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.67004263" weight="0.29826465" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -742,7 +743,8 @@
     <MESSAGE value="db users fix" />
     <MESSAGE value="UI load fixed" />
     <MESSAGE value="done?" />
-    <option name="LAST_COMMIT_MESSAGE" value="done?" />
+    <MESSAGE value="Warnings displaying" />
+    <option name="LAST_COMMIT_MESSAGE" value="Warnings displaying" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -755,7 +757,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Controller/UsersController.java</url>
-          <line>108</line>
+          <line>106</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -827,16 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="60" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EASystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -943,36 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UsersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#UsersController#0;class#UsersController#0" />
-            <element signature="method#UsersControllerInstance#0;class#UsersController#0" />
-            <element signature="method#addComplaint#0;class#UsersController#0" />
-            <element signature="method#approveLogIn#0;class#UsersController#0" />
-            <element signature="e#3077#3078#0" expanded="true" />
-            <element signature="e#3104#3105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/WarningDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
@@ -982,7 +944,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/MainUIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
+        <state relative-caret-position="384">
           <caret line="159" column="97" selection-start-line="159" selection-start-column="97" selection-end-line="159" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -995,6 +957,42 @@
             <element signature="e#3310#4262#0" />
             <element signature="e#8252#8253#0" expanded="true" />
             <element signature="e#8297#8298#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EASystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UsersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#UsersController#0;class#UsersController#0" />
+            <element signature="method#UsersControllerInstance#0;class#UsersController#0" />
+            <element signature="method#addComplaint#0;class#UsersController#0" />
+            <element signature="e#3077#3078#0" expanded="true" />
+            <element signature="e#3104#3105#0" expanded="true" />
           </folding>
         </state>
       </provider>
