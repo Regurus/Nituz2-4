@@ -140,4 +140,13 @@ public class UsersController implements Observer {
         actionLogger.writeToLog("Complaint created; " + complaint.toString());
     }
 
+    public ArrayList<Complaint> getAllUserWarning(){
+        ArrayList<Complaint> complaints = new ArrayList<>();
+        ArrayList<Warning> warnings =  warningDB.getAllWarningByDest(loginUser.getUserName());
+        for (Warning w:warnings) {
+            complaints.add(complaintDB.getByID(w.getComplaintID()));
+        }
+        return complaints;
+    }
+
 }

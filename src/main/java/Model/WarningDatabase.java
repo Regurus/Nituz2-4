@@ -3,6 +3,7 @@ package Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class WarningDatabase extends Database {
 
@@ -71,5 +72,20 @@ public class WarningDatabase extends Database {
         this.executeGetStatement(sql,args);
     }
 
+    public ArrayList<Warning> getAllWarningByDest(String destination){
+        String sql = "SELECT * " + "FROM warning_table WHERE destination = ?";
+        String[] args = {destination};
+        ResultSet rs = this.executeGetStatement(sql,args);
+        ArrayList<Warning> res = new ArrayList<Warning>();
+        try{
+            while (rs.next()) {
+                res.add(new Warning(Integer.parseInt(rs.getString("complaintID")), rs.getString("destination")));
+            }
+        }
+        catch (SQLException e ) {
+            System.out.println(e.getMessage());
+        }
+        return res;
+    }
 
 }
