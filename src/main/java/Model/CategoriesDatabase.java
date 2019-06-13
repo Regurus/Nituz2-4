@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class CategoriesDatabase extends Database{
 
     public CategoriesDatabase(){
-        super("CategoriesDB");
+        super("CategoriesDB.db");
         this.tableName = "categories_table";
         String sql = "CREATE TABLE IF NOT EXISTS categories_table (\n"
                 + "	id INTEGER PRIMARY KEY,\n"

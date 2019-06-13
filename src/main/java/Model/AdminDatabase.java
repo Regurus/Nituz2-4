@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class AdminDatabase extends Database {
     public AdminDatabase(){
-        super("adminDB");
+        super("adminDB.db");
         this.tableName = "adminUsers_table";
         String sql = "CREATE TABLE IF NOT EXISTS adminUsers_table (\n"
                 + "	username text PRIMARY KEY,\n"
