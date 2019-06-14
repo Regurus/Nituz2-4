@@ -52,6 +52,11 @@ public class UsersController implements Observer {
         return usersController;
     }
 
+    public void reset(){
+        this.loginUser = null;
+        usersController = null;
+    }
+
     public int getAvailableComplaintID(){
         return complaintID;
     }

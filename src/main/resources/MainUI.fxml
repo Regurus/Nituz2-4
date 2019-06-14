@@ -154,7 +154,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                  <children>
-                                    <FontAwesomeIconView fx:id="close" glyphName="SIGN_OUT" onMouseClicked="#close" size="60" textAlignment="CENTER" />
+                                    <FontAwesomeIconView fx:id="close" glyphName="SIGN_OUT" onMouseClicked="#logout" size="60" textAlignment="CENTER" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
@@ -166,6 +166,16 @@
                         </GridPane>
                      </children>
                   </TilePane>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                     <children>
+                        <FontAwesomeIconView glyphName="TIMES" onMouseClicked="#close" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" onMouseClicked="#minimize" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2">
+                     <children>
+                        <FontAwesomeIconView glyphName="MINUS" translateX="-5.0" translateY="3.0" />
+                     </children>
+                  </VBox>
                </children>
             </GridPane>
          </items>

@@ -160,7 +160,7 @@ public class MainUIController extends windowController {
         ArrayList<Complaint> list = UsersController.UsersControllerInstance().getAllUserWarning();
         ArrayList<String> values = new ArrayList<String>();
         for(Complaint c: list){
-            values.add(c.getId()+" :: "+c.getDestination()+" :: "+c.getDescription());
+            values.add("ID: " + c.getId()+"    From: "+c.getSource()+"    Comment: "+c.getDescription());
         }
         this.usr_wrn_list.getItems().addAll(values.toArray());
         adm_scr_cpl_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -176,7 +176,7 @@ public class MainUIController extends windowController {
             this.openNewWindow("Review Complaint","ComplaintDialog.fxml",600,400);
         }
     }
-    public Complaint getSelectedComplaint(){
+    Complaint getSelectedComplaint(){
         ArrayList<Complaint> list = UsersController.UsersControllerInstance().getAllComplaints(EASystem.eaSystemInstance().getAdmin().getDivision());
         for(Complaint c : list){
             if(c.getId()==activeComplaint)
@@ -276,6 +276,11 @@ public class MainUIController extends windowController {
             adm_new_cat_err.setTextFill(Color.GREEN);
             adm_new_cat_err.setText(catValue+": OK!");
         }
+    }
+    public void logout(){
+        EASystem.eaSystemInstance().reset();
+        UsersController.UsersControllerInstance().reset();
+        this.openNewWindowAndCloseOld("Emer-Agency","Login.fxml",600,400);
     }
 }
 

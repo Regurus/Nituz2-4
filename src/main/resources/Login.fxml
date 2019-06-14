@@ -34,5 +34,6 @@
             <Label fx:id="msg" textFill="RED" />
          </children>
       </VBox>
+      <FontAwesomeIconView fx:id="close1" glyphName="MINUS" layoutX="556.0" layoutY="20.0" onMouseClicked="#minimize" size="20" translateY="6.0" wrappingWidth="19.428571701049805" />
    </children>
 </AnchorPane>

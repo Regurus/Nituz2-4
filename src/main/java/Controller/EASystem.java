@@ -28,7 +28,10 @@ public class EASystem {
         }
         return eaSystem;
     }
-
+    public void reset(){
+        eaSystem = null;
+        this.admin = null;
+    }
     public boolean createNewCategory(String category){
         if (categoriesDB.isExist(category))
             return false;
